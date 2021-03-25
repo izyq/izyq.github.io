@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Open薇屁嗯实现静态ip , 奔跑">
+    <meta name="keywords" content="STM32初探, 奔跑">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Open薇屁嗯实现静态ip  | 奔跑</title>
+    <title>STM32初探 | 奔跑</title>
     <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/izyq/izyq.github.io/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/izyq/izyq.github.io/libs/awesome/css/all.css">
@@ -208,7 +208,7 @@
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Open薇屁嗯实现静态ip </h1>
+                    <h1 class="description center-align post-title">STM32初探</h1>
                 </div>
             </div>
         </div>
@@ -322,25 +322,12 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/VPN/">
-                                <span class="chip bg-color">VPN</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
-                    
-                    <div class="post-cate">
-                        <i class="fas fa-bookmark fa-fw icon-category"></i>
-                        
-                            <a href="/categories/%E6%8A%98%E8%85%BE/" class="post-category">
-                                折腾
-                            </a>
-                        
-                    </div>
                     
                 </div>
             </div>
@@ -349,28 +336,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-08-24
+                    2021-03-26
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-01-23
+                    2021-03-26
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    559
+                    109
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    1 分
                 </div>
                 
 
@@ -388,29 +375,15 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <blockquote>
-<ul>
-<li>由于我的电脑p775太重，学校某些地方端口封锁，而我又需要一个稳定的远程连接方式，于是开始折腾起自己家里的网件R6400。</li>
-</ul>
-</blockquote>
-<h1 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h1><p><strong>对于要向其分配静态IP地址的每个OpenVPN客户端，您需要从该特定客户端证书中提取通用名称。</strong></p>
-<p>我的路由器使用的是梅林固件，<code>Firmware:380.70_0-X7.9</code>，我在vpn配置好用户名和密码后发现每个连接的<em>common name</em>都是client，没法给每个用户名单独配置，我苦苦寻求方法无果后，偶然发现在高级设置里面开启这两项，用户名就成了common name</p>
-<p><img src="https://cdn.jsdelivr.net/gh/izyq/izyq.github.io@master/2021/01/23/openvp/pasted-1.png" alt="奔跑博客"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/izyq/izyq.github.io@master/2021/01/23/openvp/pasted-2.png" alt="奔跑博客"></p>
-<h1 id="为Open薇屁嗯客户端分配静态IP地址"><a href="#为Open薇屁嗯客户端分配静态IP地址" class="headerlink" title="为Open薇屁嗯客户端分配静态IP地址"></a>为Open薇屁嗯客户端分配静态IP地址</h1><h2 id="创建一个文件来存储静态IP地址"><a href="#创建一个文件来存储静态IP地址" class="headerlink" title="创建一个文件来存储静态IP地址"></a>创建一个文件来存储静态IP地址</h2><p>有了<code>common name</code>后，一切都变得好办起来。<br>使用 client-config-dir 选项，要求将分配给连接客户端的静态IP地址存储在OpenVPN服务器可以读取的文件中。<br>在R6400中，我们在高级设置 自定义配置中添加一行</p>
-<pre class="line-numbers language-none"><code class="language-none">client-config-dir &#x2F;etc&#x2F;ccd #路径可以更改<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p><img src="https://cdn.jsdelivr.net/gh/izyq/izyq.github.io@master/2021/01/23/openvp/pasted-3.png" alt="奔跑博客"></p>
-<h2 id="为OpenVPN客户端分配静态IP地址"><a href="#为OpenVPN客户端分配静态IP地址" class="headerlink" title="为OpenVPN客户端分配静态IP地址"></a>为OpenVPN客户端分配静态IP地址</h2><p>有了客户端的通用名称后，您就可以使用 ifconfig-push 选项。<br>例如，给通用名称为<strong>ipad</strong>的客户端分配静态ip地址：</p>
-<pre class="line-numbers language-none"><code class="language-none">mkdir &#x2F;etc&#x2F;ccd
-echo ifconfig-push 10.8.0.10 255.255.255.0 &gt; &#x2F;etc&#x2F;ccd&#x2F;gx8<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>然后输入用户名gx8和密码重新连接，open薇屁嗯就会分配你设定好的ip地址</p>
-<h2 id="不完美与瑕疵"><a href="#不完美与瑕疵" class="headerlink" title="不完美与瑕疵"></a>不完美与瑕疵</h2><p>R6400ssh连接用admin用户登陆没有root权限，而etc根目录的etc文件是tmp文件夹里的一个软链接，这意味着路由器每次重启你都需要重新创建这样一个文件，后面再去研究怎么解决这个问题吧！</p>
-<h1 id="补充-win10-open薇屁嗯-UI-的开机自动连接设置方法"><a href="#补充-win10-open薇屁嗯-UI-的开机自动连接设置方法" class="headerlink" title="补充 win10 open薇屁嗯 UI 的开机自动连接设置方法"></a>补充 win10 open薇屁嗯 UI 的开机自动连接设置方法</h1><p>如图所示，给openvpn的快捷方式目标里面加上这一句</p>
-<pre class="line-numbers language-none"><code class="language-none">--connect client1.ovpn 
-#clint1是你的配置文件名称，根据实际情况自行修改<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<p><img src="https://cdn.jsdelivr.net/gh/izyq/izyq.github.io@master/2021/01/23/openvp/pasted-4.png" alt="奔跑博客"><br>然后按win+R ，输入<code>shell:startup</code>，把改好的快捷方式复制进去便大功告成啦</p>
+                <h4 id="设置堆栈-初始化环境"><a href="#设置堆栈-初始化环境" class="headerlink" title="设置堆栈 初始化环境"></a>设置堆栈 初始化环境</h4><p><img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master/image-20210326002304906.png" alt="image-20210326002304906"></p>
+<h4 id="添加头文件"><a href="#添加头文件" class="headerlink" title="添加头文件"></a>添加头文件</h4><p><img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master/image-20210326003410932.png" alt="image-20210326003410932"></p>
+<h4 id="选择正确的型号-点开魔法棒"><a href="#选择正确的型号-点开魔法棒" class="headerlink" title="选择正确的型号(点开魔法棒)"></a>选择正确的型号(点开魔法棒)</h4><h4 id=""><a href="#" class="headerlink" title=""></a><img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master/image-20210326003646779.png" alt="image-20210326003646779"></h4><h4 id="时钟"><a href="#时钟" class="headerlink" title="时钟"></a>时钟</h4><p>控制外设使能与否就是控制这个外设的时钟</p>
+<h4 id="推挽模式-寄存器操作"><a href="#推挽模式-寄存器操作" class="headerlink" title="推挽模式 寄存器操作"></a>推挽模式 寄存器操作</h4><p><img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master/image-20210326011033237.png" alt="image-20210326011033237"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master/image-20210326011158591.png" alt="image-20210326011158591"></p>
+<p>查端口配置显示的寄存器进行配置</p>
+<p>注：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master/image-20210326011500510.png" alt="image-20210326011500510"></p>
+<p>（输出速度越快 功耗越大 这里的速度指的是GPIO电平翻转的速度 就是高低电平变化的速度）</p>
 
                 
             </div>
@@ -437,7 +410,7 @@ echo ifconfig-push 10.8.0.10 255.255.255.0 &gt; &#x2F;etc&#x2F;ccd&#x2F;gx8<span
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://zyqqq.cn/2020/08/24/openvpn/">http://zyqqq.cn/2020/08/24/openvpn/</a>
+                    <a href="http://zyqqq.cn/2021/03/26/stm32-chu-tan/">http://zyqqq.cn/2021/03/26/stm32-chu-tan/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -474,11 +447,7 @@ echo ifconfig-push 10.8.0.10 255.255.255.0 &gt; &#x2F;etc&#x2F;ccd&#x2F;gx8<span
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            
-                                <a href="/tags/VPN/">
-                                    <span class="chip bg-color">VPN</span>
-                                </a>
-                            
+                            <span class="chip bg-color">无标签</span>
                         </div>
                     
                 </div>
@@ -909,64 +878,18 @@ echo ifconfig-push 10.8.0.10 255.255.255.0 &gt; &#x2F;etc&#x2F;ccd&#x2F;gx8<span
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
-            <div class="card">
-                <a href="/2020/09/19/inodes/">
-                    <div class="card-image">
-                        
-                        <img src="https://cdn.jsdelivr.net/gh/izyq/izyq.github.io@master/medias/Linux.png" class="responsive-img" alt="Linux系统inodes资源耗尽问题 ">
-                        
-                        <span class="card-title">Linux系统inodes资源耗尽问题 </span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-09-19
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E6%8A%98%E8%85%BE/" class="post-category">
-                                    折腾
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/Linux/">
-                        <span class="chip bg-color">Linux</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
             </div>
             <div class="card">
-                <a href="/2020/08/01/qiang-ke/">
+                <a href="/2021/03/26/stm32-chu-tan/">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/izyq/izyq.github.io@master/2021/01/23/qiang-k/pasted-0.png" class="responsive-img" alt="python实现强智科技教务系统抢课（两种方法） ">
                         
-                        <span class="card-title">python实现强智科技教务系统抢课（两种方法） </span>
+                        <img src="https://cdn.jsdelivr.net/gh/izyq/izyq.github.io/medias/featureimages/0.jpg" class="responsive-img" alt="STM32初探">
+                        
+                        <span class="card-title">STM32初探</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -977,27 +900,53 @@ echo ifconfig-push 10.8.0.10 255.255.255.0 &gt; &#x2F;etc&#x2F;ccd&#x2F;gx8<span
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-08-01
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-26
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E6%8A%98%E8%85%BE/" class="post-category">
-                                    折腾
-                                </a>
-                            
+                            <i class="fas fa-user fa-fw"></i>
+                            周master
                             
                         </span>
                     </div>
                 </div>
+
                 
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/Python/">
-                        <span class="chip bg-color">Python</span>
-                    </a>
-                    
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/03/21/c-yu-yan/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/izyq/izyq.github.io/medias/featureimages/14.jpg" class="responsive-img" alt="C语言">
+                        
+                        <span class="card-title">C语言</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-21
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            周master
+                            
+                        </span>
+                    </div>
                 </div>
                 
             </div>
