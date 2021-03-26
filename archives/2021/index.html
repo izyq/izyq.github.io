@@ -370,14 +370,24 @@
                                 
                                     设置堆栈 初始化环境
 添加头文件
-选择正确的型号(点开魔法棒)
-时钟控制外设使能与否就是控制这个外设的时钟
-推挽模式 寄存器操作
+选择正确的型号(点开魔法棒)时钟控制外设使能与否就是控制这个外设的时钟
+以LED为例
 
-查端口配置显示的寄存器进行配置
-注：
+查看原理图
 
-（输出速度越快 功耗越大 这里的速度指的是GPIO电平翻转的速度 就
+
+
+
+查看总线架构
+
+
+
+找到RCC（复位和时钟控制） 基地址
+基地址：0x4002 3800 
+
+
+
+
                                 
                             </div>
                             <div class="publish-info">
@@ -426,7 +436,7 @@
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    温故而知新加油
+                                    温故而知新位移（1&lt;&lt;3)取反 ~0xf&lt;&lt;(4*0) 什么意思与 或 操作
 
                                 
                             </div>
@@ -535,7 +545,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">12.4k</span>&nbsp;字
+                class="white-color">12.8k</span>&nbsp;字
             
             
             

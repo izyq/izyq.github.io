@@ -350,7 +350,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    109
+                    474
                 </div>
                 
 
@@ -377,14 +377,105 @@
             <div id="articleContent">
                 <h4 id="设置堆栈-初始化环境"><a href="#设置堆栈-初始化环境" class="headerlink" title="设置堆栈 初始化环境"></a>设置堆栈 初始化环境</h4><p><img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master/image-20210326002304906.png"></p>
 <h4 id="添加头文件"><a href="#添加头文件" class="headerlink" title="添加头文件"></a>添加头文件</h4><p><img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master/image-20210326003410932.png"></p>
-<h4 id="选择正确的型号-点开魔法棒"><a href="#选择正确的型号-点开魔法棒" class="headerlink" title="选择正确的型号(点开魔法棒)"></a>选择正确的型号(点开魔法棒)</h4><p><img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master/image-20210326003646779.png"></p>
-<h4 id="时钟"><a href="#时钟" class="headerlink" title="时钟"></a>时钟</h4><p>控制外设使能与否就是控制这个外设的时钟</p>
-<h4 id="推挽模式-寄存器操作"><a href="#推挽模式-寄存器操作" class="headerlink" title="推挽模式 寄存器操作"></a>推挽模式 寄存器操作</h4><p><img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master/image-20210326011033237.png"></p>
+<h4 id="选择正确的型号-点开魔法棒"><a href="#选择正确的型号-点开魔法棒" class="headerlink" title="选择正确的型号(点开魔法棒)"></a>选择正确的型号(点开魔法棒)</h4><h4 id=""><a href="#" class="headerlink" title=""></a><img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master/image-20210326003646779.png"></h4><h4 id="时钟"><a href="#时钟" class="headerlink" title="时钟"></a>时钟</h4><p>控制外设使能与否就是控制这个外设的时钟</p>
+<p>以LED为例</p>
+<ul>
+<li>查看原理图</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master/image-20210326203623033.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master/image-20210326203806652.png"></p>
+<ul>
+<li>查看总线架构</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master/image-20210326204617751.png"></p>
+<ul>
+<li>找到RCC（复位和时钟控制） 基地址<ul>
+<li>基地址：0x4002 3800 </li>
+</ul>
+</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master/image-20210326205508116.png" alt="image-20210326205508116"></p>
+<ul>
+<li>接着找到RCC AHB1 外设时钟使能寄存器 (RCC_AHB1ENR)<ul>
+<li>得到 偏移地址：0x30</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master/image-20210326210058931.png" alt="image-20210326210058931"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master/image-20210326213943927.png"></p>
+<p>**RCC_AHB1ENR的地址就为基地址 + 偏移地址 ** 其他以此类推</p>
+<ul>
+<li>AHB1 外设时钟使能寄存器 使能</li>
+</ul>
+<h4 id="推挽模式-寄存器操作-控制时钟"><a href="#推挽模式-寄存器操作-控制时钟" class="headerlink" title="推挽模式 寄存器操作 控制时钟"></a>推挽模式 寄存器操作 控制时钟</h4><p><img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master/image-20210326011033237.png"></p>
 <p><img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master/image-20210326011158591.png"></p>
-<p>查端口配置显示的寄存器进行配置</p>
-<p>注：</p>
+<p>配置寄存器进行相应的模式配置 </p>
+<h4 id="通过端口配置表（表28）配置相应的位配置不同的模式"><a href="#通过端口配置表（表28）配置相应的位配置不同的模式" class="headerlink" title="通过端口配置表（表28）配置相应的位配置不同的模式"></a>通过端口配置表（表28）配置相应的位配置不同的模式</h4><p><img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master/image-20210326211412621.png"></p>
+<p>再次展示我们的原理图</p>
+<p><img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master/image-20210326203623033.png"></p>
+<p>注：<details></p>
+<summary><mark><font color=darkred>点击查看详细配置内容</font></mark></summary>
+
+<p><img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master/image-20210326212258547.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master/image-20210326212318462.png"></p>
+<p><strong>OT0 OT1 分别对应GPIO端口0 端口1 以此类推</strong></p>
 <p><img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master/image-20210326011500510.png"></p>
 <p>（输出速度越快 功耗越大 这里的速度指的是GPIO电平翻转的速度 就是高低电平变化的速度）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master/image-20210326212439536.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master/image-20210326212455084.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master/image-20210326220500358.png"></p>
+</details>
+
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token comment">/*
+	使用寄存器的方法点亮LED灯
+  */</span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">"stm32f4xx.h"</span> </span>
+
+
+<span class="token comment">/**
+  *   主函数
+  */</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#123;</span>	
+	<span class="token comment">/*开启 GPIOH 时钟，使用外设时都要先开启它的时钟*/</span>
+	RCC_AHB1ENR <span class="token operator">|=</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token operator">&lt;&lt;</span><span class="token number">7</span><span class="token punctuation">)</span><span class="token punctuation">;</span>	
+	
+	<span class="token comment">/* LED 端口初始化 */</span>
+	
+	<span class="token comment">/*GPIOH MODER10清空*/</span>
+	GPIOH_MODER  <span class="token operator">&amp;=</span> <span class="token operator">~</span><span class="token punctuation">(</span> <span class="token number">0x03</span><span class="token operator">&lt;&lt;</span> <span class="token punctuation">(</span><span class="token number">2</span><span class="token operator">*</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>	
+	<span class="token comment">/*PH10 MODER10 = 01b 输出模式*/</span>
+	GPIOH_MODER <span class="token operator">|=</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token operator">&lt;&lt;</span><span class="token number">2</span><span class="token operator">*</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	
+	<span class="token comment">/*GPIOH OTYPER10清空*/</span>
+	GPIOH_OTYPER <span class="token operator">&amp;=</span> <span class="token operator">~</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token operator">&lt;&lt;</span><span class="token number">1</span><span class="token operator">*</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token comment">/*PH10 OTYPER10 = 0b 推挽模式*/</span>
+	GPIOH_OTYPER <span class="token operator">|=</span> <span class="token punctuation">(</span><span class="token number">0</span><span class="token operator">&lt;&lt;</span><span class="token number">1</span><span class="token operator">*</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	
+	<span class="token comment">/*GPIOH OSPEEDR10清空*/</span>
+	GPIOH_OSPEEDR <span class="token operator">&amp;=</span> <span class="token operator">~</span><span class="token punctuation">(</span><span class="token number">0x03</span><span class="token operator">&lt;&lt;</span><span class="token number">2</span><span class="token operator">*</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token comment">/*PH10 OSPEEDR10 = 0b 速率2MHz*/</span>
+	GPIOH_OSPEEDR <span class="token operator">|=</span> <span class="token punctuation">(</span><span class="token number">0</span><span class="token operator">&lt;&lt;</span><span class="token number">2</span><span class="token operator">*</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	
+	<span class="token comment">/*GPIOH PUPDR10清空*/</span>
+	GPIOH_PUPDR <span class="token operator">&amp;=</span> <span class="token operator">~</span><span class="token punctuation">(</span><span class="token number">0x03</span><span class="token operator">&lt;&lt;</span><span class="token number">2</span><span class="token operator">*</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token comment">/*PH10 PUPDR10 = 01b 上拉模式*/</span>
+	GPIOH_PUPDR <span class="token operator">|=</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token operator">&lt;&lt;</span><span class="token number">2</span><span class="token operator">*</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	
+	<span class="token comment">/*PH10 BSRR寄存器的 BR10置1，使引脚输出低电平*/</span>
+	GPIOH_BSRR <span class="token operator">|=</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token operator">&lt;&lt;</span><span class="token number">16</span><span class="token operator">&lt;&lt;</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	
+	<span class="token comment">/*PH10 BSRR寄存器的 BS10置1，使引脚输出高电平*/</span>
+	<span class="token comment">//GPIOH_BSRR |= (1&lt;&lt;10);</span>
+
+	<span class="token keyword">while</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token punctuation">&#125;</span>
+
+<span class="token comment">// 函数为空，目的是为了骗过编译器不报错</span>
+<span class="token keyword">void</span> <span class="token function">SystemInit</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#123;</span>	
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
                 
             </div>
@@ -1093,7 +1184,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">12.4k</span>&nbsp;字
+                class="white-color">12.8k</span>&nbsp;字
             
             
             
