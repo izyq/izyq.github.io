@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>老毛子内网ddns</title>
+      <link href="2021/04/24/lao-mao-zi-nei-wang-ddns/"/>
+      <url>2021/04/24/lao-mao-zi-nei-wang-ddns/</url>
+      
+        <content type="html"><![CDATA[<p><img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master/20210424233043.png"></p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">ifconfig</span> <span class="token variable"><span class="token variable">$(</span>nvram get wan0_ifname_t<span class="token variable">)</span></span> <span class="token operator">|</span> <span class="token function">awk</span> -F <span class="token string">":"</span> <span class="token string">'&#123;print <span class="token variable">$2</span>&#125;'</span> <span class="token operator">|</span> <span class="token function">grep</span> -E -o <span class="token string">'([0-9]+\.)&#123;3&#125;[0-9]+'</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>主要是<code>ifconfig $(nvram get wan0_ifname_t)</code>获取本地ip信息，再通过<code>awk</code>和<code>grep</code>提取</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>STM32初探</title>
       <link href="2021/03/26/stm32-chu-tan/"/>
       <url>2021/03/26/stm32-chu-tan/</url>

@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="STM32初探, 奔跑">
+    <meta name="keywords" content="老毛子内网ddns, 奔跑">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>STM32初探 | 奔跑</title>
+    <title>老毛子内网ddns | 奔跑</title>
     <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/izyq/izyq.github.io/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/izyq/izyq.github.io/libs/awesome/css/all.css">
@@ -208,7 +208,7 @@
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">STM32初探</h1>
+                    <h1 class="description center-align post-title">老毛子内网ddns</h1>
                 </div>
             </div>
         </div>
@@ -322,25 +322,12 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/STM32/">
-                                <span class="chip bg-color">STM32</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
-                    
-                    <div class="post-cate">
-                        <i class="fas fa-bookmark fa-fw icon-category"></i>
-                        
-                            <a href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/" class="post-category">
-                                嵌入式
-                            </a>
-                        
-                    </div>
                     
                 </div>
             </div>
@@ -349,21 +336,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-03-26
+                    2021-04-24
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-03-30
+                    2021-04-24
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    474
+                    41
                 </div>
                 
 
@@ -388,107 +375,10 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h4 id="设置堆栈-初始化环境"><a href="#设置堆栈-初始化环境" class="headerlink" title="设置堆栈 初始化环境"></a>设置堆栈 初始化环境</h4><p><img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master/image-20210326002304906.png"></p>
-<h4 id="添加头文件"><a href="#添加头文件" class="headerlink" title="添加头文件"></a>添加头文件</h4><p><img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master/image-20210326003410932.png"></p>
-<h4 id="选择正确的型号-点开魔法棒"><a href="#选择正确的型号-点开魔法棒" class="headerlink" title="选择正确的型号(点开魔法棒)"></a>选择正确的型号(点开魔法棒)</h4><h4 id=""><a href="#" class="headerlink" title=""></a><img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master/image-20210326003646779.png"></h4><h4 id="时钟"><a href="#时钟" class="headerlink" title="时钟"></a>时钟</h4><p>控制外设使能与否就是控制这个外设的时钟</p>
-<p>以LED为例</p>
-<ul>
-<li>查看原理图</li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master/image-20210326203623033.png"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master/image-20210326203806652.png"></p>
-<ul>
-<li>查看总线架构</li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master/image-20210326204617751.png"></p>
-<ul>
-<li>找到RCC（复位和时钟控制） 基地址<ul>
-<li>基地址：0x4002 3800 </li>
-</ul>
-</li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master/image-20210326205508116.png"></p>
-<ul>
-<li>接着找到RCC AHB1 外设时钟使能寄存器 (RCC_AHB1ENR)<ul>
-<li>得到 偏移地址：0x30</li>
-</ul>
-</li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master/image-20210326210058931.png"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master/image-20210326213943927.png"></p>
-<p><strong>RCC_AHB1ENR的地址就为基地址 + 偏移地址</strong> 其他以此类推</p>
-<ul>
-<li>AHB1 外设时钟使能寄存器 使能</li>
-</ul>
-<h4 id="推挽模式-寄存器操作-控制时钟"><a href="#推挽模式-寄存器操作-控制时钟" class="headerlink" title="推挽模式 寄存器操作 控制时钟"></a>推挽模式 寄存器操作 控制时钟</h4><p><img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master/image-20210326011033237.png"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master/image-20210326011158591.png"></p>
-<p>配置寄存器进行相应的模式配置 </p>
-<h4 id="通过端口配置表（表28）配置相应的位配置不同的模式"><a href="#通过端口配置表（表28）配置相应的位配置不同的模式" class="headerlink" title="通过端口配置表（表28）配置相应的位配置不同的模式"></a>通过端口配置表（表28）配置相应的位配置不同的模式</h4><p><img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master/image-20210326211412621.png"></p>
-<p>再次展示我们的原理图</p>
-<p><img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master/image-20210326203623033.png"></p>
-<p>注：<details></p>
-<summary><mark><font color=darkred>点击查看详细配置内容</font></mark></summary>
+                <p><img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master/20210424233043.png"></p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">ifconfig</span> <span class="token variable"><span class="token variable">$(</span>nvram get wan0_ifname_t<span class="token variable">)</span></span> <span class="token operator">|</span> <span class="token function">awk</span> -F <span class="token string">":"</span> <span class="token string">'&#123;print <span class="token variable">$2</span>&#125;'</span> <span class="token operator">|</span> <span class="token function">grep</span> -E -o <span class="token string">'([0-9]+\.)&#123;3&#125;[0-9]+'</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>主要是<code>ifconfig $(nvram get wan0_ifname_t)</code>获取本地ip信息，再通过<code>awk</code>和<code>grep</code>提取</p>
 
-<p><img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master/image-20210326212258547.png"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master/image-20210326212318462.png"></p>
-<p><strong>OT0 OT1 分别对应GPIO端口0 端口1 以此类推</strong></p>
-<p><img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master/image-20210326011500510.png"></p>
-<p>（输出速度越快 功耗越大 这里的速度指的是GPIO电平翻转的速度 就是高低电平变化的速度）</p>
-<p><img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master/image-20210326212439536.png"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master/image-20210326212455084.png"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master/image-20210326220500358.png"></p>
-</details>
-
-<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token comment">/*
-	使用寄存器的方法点亮LED灯
-  */</span>
-<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">"stm32f4xx.h"</span> </span>
-
-
-<span class="token comment">/**
-  *   主函数
-  */</span>
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>
-<span class="token punctuation">&#123;</span>	
-	<span class="token comment">/*开启 GPIOH 时钟，使用外设时都要先开启它的时钟*/</span>
-	RCC_AHB1ENR <span class="token operator">|=</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token operator">&lt;&lt;</span><span class="token number">7</span><span class="token punctuation">)</span><span class="token punctuation">;</span>	
-	
-	<span class="token comment">/* LED 端口初始化 */</span>
-	
-	<span class="token comment">/*GPIOH MODER10清空*/</span>
-	GPIOH_MODER  <span class="token operator">&amp;=</span> <span class="token operator">~</span><span class="token punctuation">(</span> <span class="token number">0x03</span><span class="token operator">&lt;&lt;</span> <span class="token punctuation">(</span><span class="token number">2</span><span class="token operator">*</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>	
-	<span class="token comment">/*PH10 MODER10 = 01b 输出模式*/</span>
-	GPIOH_MODER <span class="token operator">|=</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token operator">&lt;&lt;</span><span class="token number">2</span><span class="token operator">*</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-	
-	<span class="token comment">/*GPIOH OTYPER10清空*/</span>
-	GPIOH_OTYPER <span class="token operator">&amp;=</span> <span class="token operator">~</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token operator">&lt;&lt;</span><span class="token number">1</span><span class="token operator">*</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token comment">/*PH10 OTYPER10 = 0b 推挽模式*/</span>
-	GPIOH_OTYPER <span class="token operator">|=</span> <span class="token punctuation">(</span><span class="token number">0</span><span class="token operator">&lt;&lt;</span><span class="token number">1</span><span class="token operator">*</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-	
-	<span class="token comment">/*GPIOH OSPEEDR10清空*/</span>
-	GPIOH_OSPEEDR <span class="token operator">&amp;=</span> <span class="token operator">~</span><span class="token punctuation">(</span><span class="token number">0x03</span><span class="token operator">&lt;&lt;</span><span class="token number">2</span><span class="token operator">*</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token comment">/*PH10 OSPEEDR10 = 0b 速率2MHz*/</span>
-	GPIOH_OSPEEDR <span class="token operator">|=</span> <span class="token punctuation">(</span><span class="token number">0</span><span class="token operator">&lt;&lt;</span><span class="token number">2</span><span class="token operator">*</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-	
-	<span class="token comment">/*GPIOH PUPDR10清空*/</span>
-	GPIOH_PUPDR <span class="token operator">&amp;=</span> <span class="token operator">~</span><span class="token punctuation">(</span><span class="token number">0x03</span><span class="token operator">&lt;&lt;</span><span class="token number">2</span><span class="token operator">*</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token comment">/*PH10 PUPDR10 = 01b 上拉模式*/</span>
-	GPIOH_PUPDR <span class="token operator">|=</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token operator">&lt;&lt;</span><span class="token number">2</span><span class="token operator">*</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-	
-	<span class="token comment">/*PH10 BSRR寄存器的 BR10置1，使引脚输出低电平*/</span>
-	GPIOH_BSRR <span class="token operator">|=</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token operator">&lt;&lt;</span><span class="token number">16</span><span class="token operator">&lt;&lt;</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-	
-	<span class="token comment">/*PH10 BSRR寄存器的 BS10置1，使引脚输出高电平*/</span>
-	<span class="token comment">//GPIOH_BSRR |= (1&lt;&lt;10);</span>
-
-	<span class="token keyword">while</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-<span class="token punctuation">&#125;</span>
-
-<span class="token comment">// 函数为空，目的是为了骗过编译器不报错</span>
-<span class="token keyword">void</span> <span class="token function">SystemInit</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>
-<span class="token punctuation">&#123;</span>	
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
                 
             </div>
             <hr/>
@@ -514,7 +404,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://zyqqq.cn/2021/03/26/stm32-chu-tan/">http://zyqqq.cn/2021/03/26/stm32-chu-tan/</a>
+                    <a href="http://zyqqq.cn/2021/04/24/lao-mao-zi-nei-wang-ddns/">http://zyqqq.cn/2021/04/24/lao-mao-zi-nei-wang-ddns/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -551,11 +441,7 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            
-                                <a href="/tags/STM32/">
-                                    <span class="chip bg-color">STM32</span>
-                                </a>
-                            
+                            <span class="chip bg-color">无标签</span>
                         </div>
                     
                 </div>
@@ -986,9 +872,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2021/04/24/lao-mao-zi-nei-wang-ddns/">
                     <div class="card-image">
@@ -1006,9 +893,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-04-24
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-24
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -1017,6 +904,7 @@
                         </span>
                     </div>
                 </div>
+
                 
             </div>
         </div>
@@ -1027,12 +915,12 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/03/21/c-yu-yan/">
+                <a href="/2021/03/26/stm32-chu-tan/">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master/20210326233135.png" class="responsive-img" alt="C语言">
+                        <img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master/20210326232842.png" class="responsive-img" alt="STM32初探">
                         
-                        <span class="card-title">C语言</span>
+                        <span class="card-title">STM32初探</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1043,14 +931,14 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-21
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-26
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/C%E8%AF%AD%E8%A8%80/" class="post-category">
-                                    C语言
+                            <a href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/" class="post-category">
+                                    嵌入式
                                 </a>
                             
                             
@@ -1060,8 +948,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/C%E8%AF%AD%E8%A8%80/">
-                        <span class="chip bg-color">C语言</span>
+                    <a href="/tags/STM32/">
+                        <span class="chip bg-color">STM32</span>
                     </a>
                     
                 </div>
