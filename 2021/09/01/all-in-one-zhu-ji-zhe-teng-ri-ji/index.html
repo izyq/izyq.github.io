@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="STM32初探, 奔跑">
+    <meta name="keywords" content="ALL IN ONE主机折腾日记, 奔跑">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>STM32初探 | 奔跑</title>
+    <title>ALL IN ONE主机折腾日记 | 奔跑</title>
     <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/izyq/izyq.github.io/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/izyq/izyq.github.io/libs/awesome/css/all.css">
@@ -208,7 +208,7 @@
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">STM32初探</h1>
+                    <h1 class="description center-align post-title">ALL IN ONE主机折腾日记</h1>
                 </div>
             </div>
         </div>
@@ -324,8 +324,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/STM32/">
-                                <span class="chip bg-color">STM32</span>
+                            <a href="/tags/%E6%8A%98%E8%85%BE/">
+                                <span class="chip bg-color">折腾</span>
+                            </a>
+                        
+                            <a href="/tags/ESXI/">
+                                <span class="chip bg-color">ESXI</span>
                             </a>
                         
                     </div>
@@ -336,8 +340,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/" class="post-category">
-                                嵌入式
+                            <a href="/categories/%E6%8A%98%E8%85%BE/" class="post-category">
+                                折腾
                             </a>
                         
                     </div>
@@ -349,28 +353,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-03-26
+                    2021-09-01
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-03-30
+                    2021-09-01
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    474
+                    1.8k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    6 分
                 </div>
                 
 
@@ -388,107 +392,118 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h4 id="设置堆栈-初始化环境"><a href="#设置堆栈-初始化环境" class="headerlink" title="设置堆栈 初始化环境"></a>设置堆栈 初始化环境</h4><p><img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master/image-20210326002304906.png"></p>
-<h4 id="添加头文件"><a href="#添加头文件" class="headerlink" title="添加头文件"></a>添加头文件</h4><p><img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master/image-20210326003410932.png"></p>
-<h4 id="选择正确的型号-点开魔法棒"><a href="#选择正确的型号-点开魔法棒" class="headerlink" title="选择正确的型号(点开魔法棒)"></a>选择正确的型号(点开魔法棒)</h4><h4 id=""><a href="#" class="headerlink" title=""></a><img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master/image-20210326003646779.png"></h4><h4 id="时钟"><a href="#时钟" class="headerlink" title="时钟"></a>时钟</h4><p>控制外设使能与否就是控制这个外设的时钟</p>
-<p>以LED为例</p>
-<ul>
-<li>查看原理图</li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master/image-20210326203623033.png"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master/image-20210326203806652.png"></p>
-<ul>
-<li>查看总线架构</li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master/image-20210326204617751.png"></p>
-<ul>
-<li>找到RCC（复位和时钟控制） 基地址<ul>
-<li>基地址：0x4002 3800 </li>
-</ul>
+                <h2 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h2><h3 id="网络拓扑"><a href="#网络拓扑" class="headerlink" title="网络拓扑"></a>网络拓扑</h3><p><img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master/%E6%9C%AA%E5%91%BD%E5%90%8D%E6%96%87%E4%BB%B6.png" alt="网络拓扑"></p>
+<h3 id="ESXI网络拓扑"><a href="#ESXI网络拓扑" class="headerlink" title="ESXI网络拓扑"></a>ESXI网络拓扑</h3><p><img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master/image-20210901104358832.png"></p>
+<h3 id="iKuai"><a href="#iKuai" class="headerlink" title="iKuai"></a>iKuai</h3><p><img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master/image-20210901104450931.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master/image-20210901104509316.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master/image-20210901104540125.png"></p>
+<h3 id="LEDE"><a href="#LEDE" class="headerlink" title="LEDE"></a>LEDE</h3><p><img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master/image-20210901104632029.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master/image-20210901104659181.png"></p>
+<h3 id="实物图"><a href="#实物图" class="headerlink" title="实物图"></a>实物图</h3><p>图吧大佬狂喜</p>
+<p><img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master/image-20210901104949779.png"></p>
+<h2 id="iKuai分流"><a href="#iKuai分流" class="headerlink" title="iKuai分流"></a>iKuai分流</h2><ol>
+<li><p>下载文件（<a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/hq450/fancyss/master/rules/gfwlist.conf%EF%BC%89">https://raw.githubusercontent.com/hq450/fancyss/master/rules/gfwlist.conf）</a></p>
 </li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master/image-20210326205508116.png"></p>
-<ul>
-<li>接着找到RCC AHB1 外设时钟使能寄存器 (RCC_AHB1ENR)<ul>
-<li>得到 偏移地址：0x30</li>
-</ul>
+<li><p>使用Python 将GFwlist转化为iKuai可识别的格式</p>
 </li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master/image-20210326210058931.png"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master/image-20210326213943927.png"></p>
-<p><strong>RCC_AHB1ENR的地址就为基地址 + 偏移地址</strong> 其他以此类推</p>
-<ul>
-<li>AHB1 外设时钟使能寄存器 使能</li>
-</ul>
-<h4 id="推挽模式-寄存器操作-控制时钟"><a href="#推挽模式-寄存器操作-控制时钟" class="headerlink" title="推挽模式 寄存器操作 控制时钟"></a>推挽模式 寄存器操作 控制时钟</h4><p><img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master/image-20210326011033237.png"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master/image-20210326011158591.png"></p>
-<p>配置寄存器进行相应的模式配置 </p>
-<h4 id="通过端口配置表（表28）配置相应的位配置不同的模式"><a href="#通过端口配置表（表28）配置相应的位配置不同的模式" class="headerlink" title="通过端口配置表（表28）配置相应的位配置不同的模式"></a>通过端口配置表（表28）配置相应的位配置不同的模式</h4><p><img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master/image-20210326211412621.png"></p>
-<p>再次展示我们的原理图</p>
-<p><img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master/image-20210326203623033.png"></p>
-<p>注：<details></p>
-<summary><mark><font color=darkred>点击查看详细配置内容</font></mark></summary>
+<li><p>在iKuai域名分流里 导入生成的stream.txt文件</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#设置区域开始</span>
+wanname <span class="token operator">=</span> <span class="token string">'wan2'</span> <span class="token comment">#设置出国分流wan口名字</span>
+<span class="token comment">#设置区域结束</span>
+<span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'gfwlist.conf'</span><span class="token punctuation">,</span><span class="token string">'r'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
+    gfwlist_txt <span class="token operator">=</span> f<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span>
+pos1 <span class="token operator">=</span> <span class="token number">0</span>
+pos2 <span class="token operator">=</span> <span class="token number">0</span>
+data <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+    pos1 <span class="token operator">=</span> gfwlist_txt<span class="token punctuation">.</span>find<span class="token punctuation">(</span><span class="token string">'ipset=/.'</span><span class="token punctuation">,</span> pos2<span class="token punctuation">)</span>
+    <span class="token keyword">if</span> pos1 <span class="token operator">==</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">:</span>
+        <span class="token keyword">break</span>
+    pos2 <span class="token operator">=</span> gfwlist_txt<span class="token punctuation">.</span>find<span class="token punctuation">(</span><span class="token string">'/gfwlist'</span><span class="token punctuation">,</span> pos1<span class="token punctuation">)</span>
+    data<span class="token punctuation">.</span>append<span class="token punctuation">(</span>gfwlist_txt<span class="token punctuation">[</span>pos1<span class="token operator">+</span><span class="token number">8</span><span class="token punctuation">:</span>pos2<span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span>
+write <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token operator">/</span><span class="token number">500</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    writedata <span class="token operator">=</span> <span class="token string">'id='</span><span class="token operator">+</span><span class="token builtin">str</span><span class="token punctuation">(</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token string">" "</span><span class="token operator">+</span><span class="token string">'enabled=yes comment='</span><span class="token operator">+</span><span class="token builtin">str</span><span class="token punctuation">(</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token string">' domain='</span>
+    <span class="token keyword">for</span> ii <span class="token keyword">in</span> data<span class="token punctuation">[</span><span class="token number">500</span><span class="token operator">*</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token number">500</span><span class="token operator">*</span><span class="token punctuation">(</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+        writedata <span class="token operator">=</span> writedata<span class="token operator">+</span>ii<span class="token operator">+</span><span class="token string">','</span>
+    writedata <span class="token operator">=</span> writedata<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token builtin">len</span><span class="token punctuation">(</span>writedata<span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span>
+    writedata <span class="token operator">=</span> writedata<span class="token operator">+</span><span class="token string">' interface='</span><span class="token operator">+</span>wanname<span class="token operator">+</span><span class="token string">' src_addr= week=1234567 time=00:00-23:59'</span>
+    write<span class="token punctuation">.</span>append<span class="token punctuation">(</span>writedata<span class="token punctuation">)</span>
+<span class="token keyword">if</span> <span class="token builtin">len</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token operator">//</span><span class="token number">500</span> <span class="token operator">!=</span><span class="token number">0</span><span class="token punctuation">:</span>
+    writedata <span class="token operator">=</span> <span class="token string">'id='</span> <span class="token operator">+</span> <span class="token builtin">str</span><span class="token punctuation">(</span>i <span class="token operator">+</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">" "</span> <span class="token operator">+</span> <span class="token string">'enabled=yes comment='</span> <span class="token operator">+</span> <span class="token builtin">str</span><span class="token punctuation">(</span>i <span class="token operator">+</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">' domain='</span>
+    <span class="token keyword">for</span> ii <span class="token keyword">in</span> data<span class="token punctuation">[</span><span class="token number">500</span> <span class="token operator">*</span> <span class="token punctuation">(</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+        writedata <span class="token operator">=</span> writedata <span class="token operator">+</span> ii <span class="token operator">+</span> <span class="token string">','</span>
+    writedata <span class="token operator">=</span> writedata<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token builtin">len</span><span class="token punctuation">(</span>writedata<span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span>
+    writedata <span class="token operator">=</span> writedata <span class="token operator">+</span> <span class="token string">' interface='</span><span class="token operator">+</span>wanname<span class="token operator">+</span><span class="token string">' src_addr= week=1234567 time=00:00-23:59'</span>
+    write<span class="token punctuation">.</span>append<span class="token punctuation">(</span>writedata<span class="token punctuation">)</span>
+finaldata <span class="token operator">=</span> <span class="token string">''</span>
+<span class="token keyword">for</span> i <span class="token keyword">in</span> write<span class="token punctuation">:</span>
+    finaldata <span class="token operator">=</span> finaldata<span class="token operator">+</span>i <span class="token operator">+</span><span class="token string">'\n'</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>finaldata<span class="token punctuation">)</span>
+<span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'stream.txt'</span><span class="token punctuation">,</span><span class="token string">'w'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
+    f<span class="token punctuation">.</span>write<span class="token punctuation">(</span>finaldata<span class="token punctuation">)</span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="测个速"><a href="#测个速" class="headerlink" title="测个速"></a>测个速</h3><p><img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master/image-20210901105948342.png"></p>
+</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master/image-20210901110014221.png"></p>
+<p>实际使用也是 4k无压力</p>
+<h2 id="NAS群晖应用"><a href="#NAS群晖应用" class="headerlink" title="NAS群晖应用"></a>NAS群晖应用</h2><h3 id="监控-Surveillance"><a href="#监控-Surveillance" class="headerlink" title="监控:Surveillance"></a>监控:Surveillance</h3><p>家里的萤石云原生支持RSTP串流，和贴吧大佬40个摄像头许可的Surveillance 配合，虽然不是很完美，但是比之前方便太多，尤其是Surveillance的智能延时确实不错</p>
+<p><img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master/image-20210901110621692.png"></p>
+<h2 id="ESXI安装"><a href="#ESXI安装" class="headerlink" title="ESXI安装"></a>ESXI安装</h2><h3 id="网卡驱动注入"><a href="#网卡驱动注入" class="headerlink" title="网卡驱动注入"></a>网卡驱动注入</h3><p>我的主板网卡是8168 默认不支持 ，因此需要下载<a target="_blank" rel="noopener" href="https://vibsdepot.v-front.de/wiki/index.php/Net55-r8168">net55-r8168</a>这个驱动并封装</p>
+<p><img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master/20210831232838.png"></p>
+<p>驱动安装参考博客  <a target="_blank" rel="noopener" href="https://blog.whsir.com/post-3377.html">https://blog.whsir.com/post-3377.html</a></p>
+<p>ESXI参考博客 <a target="_blank" rel="noopener" href="https://blog.csdn.net/huaidan1469/article/details/100032963">https://blog.csdn.net/huaidan1469/article/details/100032963</a></p>
+<h3 id="ESXI管理地址外网访问"><a href="#ESXI管理地址外网访问" class="headerlink" title="ESXI管理地址外网访问"></a>ESXI管理地址外网访问</h3><p>转发到443端口，其他均无效</p>
+<p>尝试修改默认端口，但ESXI每次重启后防火墙会重置，修改起来太繁琐。</p>
+<h2 id="NAS群晖安装"><a href="#NAS群晖安装" class="headerlink" title="NAS群晖安装"></a>NAS群晖安装</h2><p>黑群晖的安装文件分为两个，第一部分为引导项，第二部分为系统镜像。每个版本的引导项支持的群晖系统版本有限，较低版本的引导项可能无法引导较新的系统镜像，导致无法进入系统，所以在选择引导盘时需要注意其是否支持你准备安装的群晖版本。你可以在 <a target="_blank" rel="noopener" href="https://xpenology.com/forum/topic/12952-dsm-62-loader/">Jun 大的帖子</a>中获取到所有的引导项下载链接。</p>
+<p>黑群晖和黑苹果的启动方式有点像，启动时会先启动引导，从引导里面读取信息，进而启动对应配置的系统，所以引导和系统是分开的。</p>
+<p>因为引导文件是img格式的镜像文件，无法直接在ESXi上使用。有两种思路，第一种是将synoboot.img转换成iso文件，然后挂到虚拟机的光驱上，开机先启动光驱；另一种是将synoboot.img转换成ESXi的一块虚拟磁盘，这块盘是独立于数据盘的，开机先启动这块装有引导的磁盘。</p>
+<p>首先安装转换引导文件的软件StarWind V2V Converter，<a target="_blank" rel="noopener" href="https://www.starwindsoftware.com/download-starwind-products#download">官方下载地址</a></p>
+<p>由于是要给ESXi用，所以选择VMDK，ESXi Server image</p>
+<p>转换成功后得到的两个文件。稍后会将此上传</p>
+<p><img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master/c4ca4238a0b923820dcc.jpg" alt="1"></p>
+<p>1.新建虚拟机</p>
+<p><a target="_blank" rel="noopener" href="https://www.bokezhu.com/content/uploads/2019/07/c81e728d9d4c2f636f06.jpg"><img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master/c81e728d9d4c2f636f06.jpg" alt="2"></a></p>
+<p>2.选择名称和客户机操作系统，按照图片选择就可以，选择完成后下一步</p>
+<p><img src="https://www.bokezhu.com/content/uploads/2019/07/eccbc87e4b5ce2fe2830.jpg" alt="3"></p>
+<p>3.选择存储，这里不要 操作直接下一步</p>
+<p><a target="_blank" rel="noopener" href="https://www.bokezhu.com/content/uploads/2019/07/a87ff679a2f3e71d9181.jpg"><img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master/a87ff679a2f3e71d9181.jpg" alt="4"></a></p>
+<p><img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master/e4da3b7fbbce2345d777.jpg" alt="5"></p>
+<p>5.自定义设置，这里需要删除硬盘1；SCSI控制器0；CD/DVD驱动器0，并且将网卡适配器类型改为E1000，不改可能将无法获取ip地址，修改完成下一步完成配置</p>
+<p>6.下载黑群晖所需工具，下载地址：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1jCUjEyNht7KHd8UvujvJXA">https://pan.baidu.com/s/1jCUjEyNht7KHd8UvujvJXA</a> 提取码：nc3t 下载完成解压</p>
+<p><img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master/6512bd43d9caa6e02c99.jpg" alt="11"></p>
+<p>7.上传引导文件，在ESXI中找到刚才创建虚拟机位置上传synoboot和synoboot-flat到该文件夹</p>
+<p><img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master/c20ad4d76fe97759aa27.jpg" alt="12"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master/c51ce410c124a10e0db5.jpg" alt="13"></p>
+<p>8.返回虚拟机找到刚才添加的虚拟机编辑设置，点击添加现有硬盘找到刚刚上传的synoboot选择保存</p>
+<p><img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master/aab3238922bcc25a6f60.jpg" alt="14"></p>
+<p>9.添加存储硬盘，注意：控制器位置应选择SATA控制器；SATA(0.1)再加一块硬盘应按照排序SATA(0.2)，磁盘模式选择独立-持久后保存，启动虚拟机</p>
+<p><img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master/9bf31c7ff062936a96d3.jpg" alt="15"></p>
+<p>出现图上画面说明引导成功，进行下一步操作。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master/c74d97b01eae257e44aa.jpg" alt="16"></p>
+<p>11.搜索黑群晖ip地址，登录路由器找到在线设备DiskStation就是该设备ip地址。也可以在工具包里找到synology-assistant来搜索ip地址</p>
+<p><img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master/70efdf2ec9b086079795.jpg" alt="17"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master/6f4922f45568161a8cdf.jpg" alt="18"></p>
+<p>12.找到ip后在浏览器输入ip地址，点击设置到下一步；选择浏览找到工具包中DSM_DS3615xs_23824后点击立即安装，安装过程大概持续10分钟</p>
+<p><img src="https://www.bokezhu.com/content/uploads/2019/07/98f13708210194c47568.jpg" alt="20"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master/3c59dc048e8850243be8.jpg" alt="21"></p>
+<p>13.安装完成后跳出创建您的管理员账户，输入服务器名称账号及密码下一步，将更新设置设置成手动安装，SMART检测和启动硬盘扇区警告勾选去掉下一步后不要输入账号直接跳过完成安装。</p>
+<h3 id="硬盘直通之dsm直通-amp-sata直通"><a href="#硬盘直通之dsm直通-amp-sata直通" class="headerlink" title="硬盘直通之dsm直通&amp;sata直通"></a>硬盘直通之dsm直通&amp;sata直通</h3><blockquote>
+<p>关于 RDM 和 Passthrough 的区别</p>
+<p>如果你提前搜过资料可能会发现很多 ESXi 上安装黑群晖的教程中会提到以 “RDM 来把硬盘直通给群晖”，这实际上很扯淡的，因为 RDM 和设备直通是完全两个独立的概念。<br>一些有玩虚拟机经验的人简单看一下那些 RDM 硬盘直通教程就能发现问题，RDM 是将物理硬件虚拟化后再传递给虚拟机，也就是由 ESXi 读取设备后生成一个新的虚拟设备再传递给虚拟机。而硬件直通（Passthrough）是将物理主机上的设备直接规划给虚拟机独立使用，ESXi 系统不会再利用这个物理硬件。<br>这也就是为什么使用 RDM 虽然可以让群晖读到那么一整个硬盘，但硬盘名称总是 “VMWare 虚拟硬盘”，而使用 Passthrough 的硬盘永远都可以显示出正确的硬盘信息。在黑群晖中，使用 Passthrough 直通硬盘允许群晖系统对硬盘直接进行管理，包括但不限于硬盘休眠和硬盘健康度监测，这些功能使用 RDM 是不可能做到了，RDM 也仅仅做到了让虚拟机读到一个完整的硬盘。</p>
+</blockquote>
+<p>参考博客：<a target="_blank" rel="noopener" href="https://blog.irain.in/archives/ESXi_Synology_10G_Passthrough.html">https://blog.irain.in/archives/ESXi_Synology_10G_Passthrough.html</a></p>
+<p>我最终还是选择RDM 参考博客 <a target="_blank" rel="noopener" href="https://www.cnblogs.com/vaemaxsky/p/13982648.html">https://www.cnblogs.com/vaemaxsky/p/13982648.html</a></p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>群晖的硬盘设置很重要，不然很容易出现各种奇奇怪怪的问题，我遇到过不进系统，引导后到安装步骤时识别不了硬盘</p>
+<h2 id="iKuai安装"><a href="#iKuai安装" class="headerlink" title="iKuai安装"></a>iKuai安装</h2><p>很简单 不赘述</p>
+<h2 id="LEDE安装"><a href="#LEDE安装" class="headerlink" title="LEDE安装"></a>LEDE安装</h2><p> 科学备份 <a target="_blank" rel="noopener" href="https://github.com/izyq/fancyss_history_package">https://github.com/izyq/fancyss_history_package</a>                                       </p>
+<p>参考博客 <a target="_blank" rel="noopener" href="https://post.smzdm.com/p/awxq6zvm/">https://post.smzdm.com/p/awxq6zvm/</a>      </p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/vaemaxsky/p/13982648.html">https://www.cnblogs.com/vaemaxsky/p/13982648.html</a></p>
+<p><a target="_blank" rel="noopener" href="https://firmware.koolshare.cn/LEDE_X64_fw867/%E8%99%9A%E6%8B%9F%E6%9C%BA%E8%BD%AC%E7%9B%98%E6%88%96PE%E4%B8%8B%E5%86%99%E7%9B%98%E4%B8%93%E7%94%A8/">https://firmware.koolshare.cn/LEDE_X64_fw867/%E8%99%9A%E6%8B%9F%E6%9C%BA%E8%BD%AC%E7%9B%98%E6%88%96PE%E4%B8%8B%E5%86%99%E7%9B%98%E4%B8%93%E7%94%A8/</a></p>
+<p>​                     </p>
+<p>​                                                                              </p>
 
-<p><img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master/image-20210326212258547.png"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master/image-20210326212318462.png"></p>
-<p><strong>OT0 OT1 分别对应GPIO端口0 端口1 以此类推</strong></p>
-<p><img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master/image-20210326011500510.png"></p>
-<p>（输出速度越快 功耗越大 这里的速度指的是GPIO电平翻转的速度 就是高低电平变化的速度）</p>
-<p><img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master/image-20210326212439536.png"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master/image-20210326212455084.png"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master/image-20210326220500358.png"></p>
-</details>
-
-<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token comment">/*
-	使用寄存器的方法点亮LED灯
-  */</span>
-<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">"stm32f4xx.h"</span> </span>
-
-
-<span class="token comment">/**
-  *   主函数
-  */</span>
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>
-<span class="token punctuation">&#123;</span>	
-	<span class="token comment">/*开启 GPIOH 时钟，使用外设时都要先开启它的时钟*/</span>
-	RCC_AHB1ENR <span class="token operator">|=</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token operator">&lt;&lt;</span><span class="token number">7</span><span class="token punctuation">)</span><span class="token punctuation">;</span>	
-	
-	<span class="token comment">/* LED 端口初始化 */</span>
-	
-	<span class="token comment">/*GPIOH MODER10清空*/</span>
-	GPIOH_MODER  <span class="token operator">&amp;=</span> <span class="token operator">~</span><span class="token punctuation">(</span> <span class="token number">0x03</span><span class="token operator">&lt;&lt;</span> <span class="token punctuation">(</span><span class="token number">2</span><span class="token operator">*</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>	
-	<span class="token comment">/*PH10 MODER10 = 01b 输出模式*/</span>
-	GPIOH_MODER <span class="token operator">|=</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token operator">&lt;&lt;</span><span class="token number">2</span><span class="token operator">*</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-	
-	<span class="token comment">/*GPIOH OTYPER10清空*/</span>
-	GPIOH_OTYPER <span class="token operator">&amp;=</span> <span class="token operator">~</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token operator">&lt;&lt;</span><span class="token number">1</span><span class="token operator">*</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token comment">/*PH10 OTYPER10 = 0b 推挽模式*/</span>
-	GPIOH_OTYPER <span class="token operator">|=</span> <span class="token punctuation">(</span><span class="token number">0</span><span class="token operator">&lt;&lt;</span><span class="token number">1</span><span class="token operator">*</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-	
-	<span class="token comment">/*GPIOH OSPEEDR10清空*/</span>
-	GPIOH_OSPEEDR <span class="token operator">&amp;=</span> <span class="token operator">~</span><span class="token punctuation">(</span><span class="token number">0x03</span><span class="token operator">&lt;&lt;</span><span class="token number">2</span><span class="token operator">*</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token comment">/*PH10 OSPEEDR10 = 0b 速率2MHz*/</span>
-	GPIOH_OSPEEDR <span class="token operator">|=</span> <span class="token punctuation">(</span><span class="token number">0</span><span class="token operator">&lt;&lt;</span><span class="token number">2</span><span class="token operator">*</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-	
-	<span class="token comment">/*GPIOH PUPDR10清空*/</span>
-	GPIOH_PUPDR <span class="token operator">&amp;=</span> <span class="token operator">~</span><span class="token punctuation">(</span><span class="token number">0x03</span><span class="token operator">&lt;&lt;</span><span class="token number">2</span><span class="token operator">*</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token comment">/*PH10 PUPDR10 = 01b 上拉模式*/</span>
-	GPIOH_PUPDR <span class="token operator">|=</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token operator">&lt;&lt;</span><span class="token number">2</span><span class="token operator">*</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-	
-	<span class="token comment">/*PH10 BSRR寄存器的 BR10置1，使引脚输出低电平*/</span>
-	GPIOH_BSRR <span class="token operator">|=</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token operator">&lt;&lt;</span><span class="token number">16</span><span class="token operator">&lt;&lt;</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-	
-	<span class="token comment">/*PH10 BSRR寄存器的 BS10置1，使引脚输出高电平*/</span>
-	<span class="token comment">//GPIOH_BSRR |= (1&lt;&lt;10);</span>
-
-	<span class="token keyword">while</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-<span class="token punctuation">&#125;</span>
-
-<span class="token comment">// 函数为空，目的是为了骗过编译器不报错</span>
-<span class="token keyword">void</span> <span class="token function">SystemInit</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>
-<span class="token punctuation">&#123;</span>	
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
                 
             </div>
             <hr/>
@@ -514,7 +529,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://zyqqq.cn/2021/03/26/stm32-chu-tan/">http://zyqqq.cn/2021/03/26/stm32-chu-tan/</a>
+                    <a href="http://zyqqq.cn/2021/09/01/all-in-one-zhu-ji-zhe-teng-ri-ji/">http://zyqqq.cn/2021/09/01/all-in-one-zhu-ji-zhe-teng-ri-ji/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -552,8 +567,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/STM32/">
-                                    <span class="chip bg-color">STM32</span>
+                                <a href="/tags/%E6%8A%98%E8%85%BE/">
+                                    <span class="chip bg-color">折腾</span>
+                                </a>
+                            
+                                <a href="/tags/ESXI/">
+                                    <span class="chip bg-color">ESXI</span>
                                 </a>
                             
                         </div>
@@ -986,9 +1005,63 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2021/09/01/all-in-one-zhu-ji-zhe-teng-ri-ji/">
+                    <div class="card-image">
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master/%E6%9C%AA%E5%91%BD%E5%90%8D%E6%96%87%E4%BB%B6.png" class="responsive-img" alt="ALL IN ONE主机折腾日记">
+                        
+                        <span class="card-title">ALL IN ONE主机折腾日记</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-01
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%8A%98%E8%85%BE/" class="post-category">
+                                    折腾
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%8A%98%E8%85%BE/">
+                        <span class="chip bg-color">折腾</span>
+                    </a>
+                    
+                    <a href="/tags/ESXI/">
+                        <span class="chip bg-color">ESXI</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
             <div class="card">
                 <a href="/2021/04/24/lao-mao-zi-nei-wang-ddns/">
                     <div class="card-image">
@@ -1006,9 +1079,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-04-24
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-24
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -1016,54 +1089,6 @@
                             
                         </span>
                     </div>
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2021/03/21/c-yu-yan/">
-                    <div class="card-image">
-                        
-                        <img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master/20210326233135.png" class="responsive-img" alt="C语言">
-                        
-                        <span class="card-title">C语言</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-21
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/C%E8%AF%AD%E8%A8%80/" class="post-category">
-                                    C语言
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/C%E8%AF%AD%E8%A8%80/">
-                        <span class="chip bg-color">C语言</span>
-                    </a>
-                    
                 </div>
                 
             </div>
