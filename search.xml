@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>Git学习</title>
+      <link href="2022/02/24/learn-git/"/>
+      <url>2022/02/24/learn-git/</url>
+      
+        <content type="html"><![CDATA[<p><code>git init</code> 初始化仓库</p><p><code>git add &lt;filename&gt;</code>  加入暂存区</p><p><code>git add .</code>  将所有文件加入暂存区</p><p><code>git commit -m &lt;messeage&gt; </code> 提交文件到本地仓库 <em>message为对该次提交的描述</em></p><p><code>git reset &lt;filename&gt; </code>  移出暂存区</p><p><code>alias</code> 别名</p><p>git安装目录 <code>gitconfig</code>文件可以设置alias</p><p><code>git reflog</code> 可查看commitID</p><p><code>git checkout -b &lt;name&gt; &lt;template&gt;</code>创建新的分支  </p><p><code>&lt;name&gt;</code> 新分支的名字 <code>&lt;template&gt;</code>以哪个分支或者commit为模板 </p><p>不填则默认以当前分支为模板</p><p><code>git checkout &lt;branchname&gt;</code>切换到指定分支</p><p><code>git branch</code> 查看所有分支</p><h4 id="git-回滚"><a href="#git-回滚" class="headerlink" title="git 回滚"></a>git 回滚</h4><p><code>git reset &lt;commitID&gt;</code> 回退</p><p>1.已提交，没有push</p><ul><li><code>git reset --soft</code> 撤销<code>commit</code></li><li><code>git reset --mix</code>撤销commit和add两个动作</li></ul><p>2.已提交，并且push</p><ul><li><code>git reset --hard</code>撤销并舍弃版本号之后的提交记录，文件将还原为所选提交的状态</li><li><code>git revert</code> 文件还原为所选提交状态 本地变更保持不变</li></ul><p>文件状态：<br>1.没有被add过的文件叫untracked<br>2.add之后文件处于staged状态等待commit<br>3.commit之后文件处于unmodified这里之所以是modified是因为文件会跟仓库中的文件对比<br>4.当unmodified的文件被修改则会变为modified状态<br>5.modified之后的文件add之后将继续变为staged状态<br>6.unmodifed的文件还有一种可能是已经不再需要了，那么可以remove它不再追踪变为untracked状态</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>C++基础</title>
       <link href="2021/12/01/cplus/"/>
       <url>2021/12/01/cplus/</url>
