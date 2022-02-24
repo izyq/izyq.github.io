@@ -354,7 +354,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    362
+                    381
                 </div>
                 
 
@@ -379,7 +379,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p><code>git init</code> 初始化仓库</p>
+                <h4 id="git-基本命令"><a href="#git-基本命令" class="headerlink" title="git 基本命令"></a>git 基本命令</h4><p><code>git init</code> 初始化仓库</p>
 <p><code>git add &lt;filename&gt;</code>  加入暂存区</p>
 <p><code>git add .</code>  将所有文件加入暂存区</p>
 <p><code>git commit -m &lt;messeage&gt; </code> 提交文件到本地仓库 <em>message为对该次提交的描述</em></p>
@@ -404,6 +404,10 @@
 <li><code>git revert</code> 文件还原为所选提交状态 本地变更保持不变</li>
 </ul>
 <p>文件状态：<br>1.没有被add过的文件叫untracked<br>2.add之后文件处于staged状态等待commit<br>3.commit之后文件处于unmodified这里之所以是modified是因为文件会跟仓库中的文件对比<br>4.当unmodified的文件被修改则会变为modified状态<br>5.modified之后的文件add之后将继续变为staged状态<br>6.unmodifed的文件还有一种可能是已经不再需要了，那么可以remove它不再追踪变为untracked状态</p>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> git flow工作流</li>
+<li><input checked="" disabled="" type="checkbox"> git rebase  和 merge  （合并和变基）</li>
+</ul>
 
                 
             </div>
