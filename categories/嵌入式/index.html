@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="分类, 奔跑">
+    <meta name="keywords" content="分类: 嵌入式, 奔跑">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>分类 | 奔跑</title>
+    <title>分类: 嵌入式 | 奔跑</title>
     <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/izyq/izyq.github.io@gh-pages/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/izyq/izyq.github.io@gh-pages/libs/awesome/css/all.css">
@@ -199,6 +199,7 @@
 
 </header>
 
+    
     <div class="bg-cover pd-header about-cover">
     <div class="container">
     <div class="row">
@@ -239,9 +240,11 @@
     </div>
 </div>
 
+
 <main class="content">
 
     
+        
 
 <div id="category-cloud" class="container chip-container">
     <div class="card">
@@ -309,7 +312,7 @@
                 
                 <a href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/" title="嵌入式: 1">
                     <span class="chip center-align waves-effect waves-light
-                             chip-default "
+                             chip-active "
                             style="background-color: #82E0AA;">嵌入式
                         <span class="tag-length">1</span>
                     </span>
@@ -330,67 +333,83 @@
     </div>
 </div>
 
-
     
-    <style type="text/css">
-    #category-radar {
-        width: 100%;
-        height: 360px;
-    }
-</style>
 
-<div class="container" data-aos="fade-up">
-    <div class="card">
-        <div id="category-radar" class="card-content"></div>
-    </div>
-</div>
-
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/izyq/izyq.github.io@gh-pages/libs/echarts/echarts.min.js"></script>
-<script type="text/javascript">
-    let radarChart = echarts.init(document.getElementById('category-radar'));
 
     
 
-    let option = {
-        title: {
-            left: 'center',
-            text: '文章分类雷达图',
-            textStyle: {
-                fontWeight: 500,
-                fontSize: 22
-            }
-        },
-        tooltip: {},
-        radar: {
-            name: {
-                textStyle: {
-                    color: '#3C4858'
-                }
-            },
-            indicator: [{"name":"折腾","max":8},{"name":"Python","max":8},{"name":"C语言","max":8},{"name":"网络","max":8},{"name":"Project","max":8},{"name":"SQL","max":8},{"name":"嵌入式","max":8},{"name":"Others","max":8}],
-            nameGap: 5,
-            center: ['50%','55%'],
-            radius: '66%'
-        },
-        series: [{
-            type: 'radar',
-            color: ['#3ecf8e'],
-            itemStyle: {normal: {areaStyle: {type: 'default'}}},
-            data : [
-                {
-                    value : [7,2,2,1,2,1,1,2],
-                    name : '文章分类数量'
-                }
-            ]
-        }]
-    };
+    <article id="articles" class="container articles">
+        <div class="row tags-posts">
+            
+            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2021/03/26/stm32-chu-tan/">
+                        <div class="card-image tag-image">
+                            
+                            <img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master/20210326232842.png" class="responsive-img" alt="STM32初探">
+                            
+                            <span class="card-title">STM32初探</span>
+                        </div>
+                    </a>
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                设置堆栈 初始化环境
+添加头文件
+选择正确的型号(点开魔法棒)时钟控制外设使能与否就是控制这个外设的时钟
+以LED为例
 
-    radarChart.setOption(option);
-</script>
+查看原理图
 
-    
 
+
+
+查看总线架构
+
+
+
+找到RCC（复位和时钟控制） 基地址
+基地址：0x4002 3800 
+
+
+
+
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-26
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/" class="post-category">
+                                    嵌入式
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/STM32/">
+                            <span class="chip bg-color">STM32</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+        </div>
+    </article>
 </main>
+
+
 
 
     <footer class="page-footer footer-bg-color">

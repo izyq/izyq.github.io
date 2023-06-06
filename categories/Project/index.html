@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="分类, 奔跑">
+    <meta name="keywords" content="分类: Project, 奔跑">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>分类 | 奔跑</title>
+    <title>分类: Project | 奔跑</title>
     <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/izyq/izyq.github.io@gh-pages/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/izyq/izyq.github.io@gh-pages/libs/awesome/css/all.css">
@@ -199,31 +199,32 @@
 
 </header>
 
+    
     <div class="bg-cover pd-header about-cover">
     <div class="container">
-    <div class="row">
+        <div class="row">
     <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
         <div class="brand">
             <div class="title center-align">
                 
-                Just Do It
+                    小周的项目记录
                 
             </div>
 
             <div class="description center-align">
                 
-                <span id="subtitle"></span>
-                <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
-                <script>
-                    var typed = new Typed("#subtitle", {
-                        strings: ['向死而生','Never Give Up'],
-                        startDelay: 300,
-                        typeSpeed: 100,
-                        loop: true,
-                        backSpeed: 50,
-                        showCursor: true
-                    });
-                </script>
+                    <span id="subtitle"></span>
+                    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+                    <script>
+                        var typed = new Typed("#subtitle", {
+                            strings: ['欢迎查看我的项目','My Project and Waht I do'],
+                            startDelay: 300,
+                            typeSpeed: 100,
+                            loop: true,
+                            backSpeed: 50,
+                            showCursor: true
+                        });
+                    </script>
                 
             </div>
         </div>
@@ -231,166 +232,150 @@
 </div>
 
 
-<script>
-    $('.bg-cover').css('background-image', 'url(https://cdn.jsdelivr.net/gh/izyq/izyq.github.io@gh-pages/medias/banner/0.jpg)');
-</script>
+<style>
+    .bg-cover {
+        background-image: url(https://cdn.jsdelivr.net/gh/izyq/izyq.github.io@gh-pages/medias/banner/project-bg.jpg)
+    }
+    .bg-cover:after {
+        background-image: url(https://cdn.jsdelivr.net/gh/izyq/izyq.github.io@gh-pages/medias/bggrid.png)
+    }
 
+    @media (max-width: 480px) {
+        .bg-cover {
+            background-image: url(https://cdn.jsdelivr.net/gh/izyq/izyq.github.io@gh-pages/medias/banner/bg-small.jpg) !important;
+        }
+    }
 
+</style>
+
+        <div class="cover-btns">
+            <a href="#articles" class="waves-effect waves-light btn">
+                <i class="fa fa-angle-double-down"></i>开始阅读
+            </a>
+
+            
+        </div>
     </div>
 </div>
+
 
 <main class="content">
 
     
 
-<div id="category-cloud" class="container chip-container">
-    <div class="card">
-        <div class="card-content">
-            <div class="tag-title center-align">
-                <i class="fas fa-bookmark"></i>&nbsp;&nbsp;文章分类
+
+    
+
+    <article id="articles" class="container articles">
+        <div class="row tags-posts">
+            
+            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2020/08/01/qiang-ke/">
+                        <div class="card-image tag-image">
+                            
+                            <img src="https://cdn.jsdelivr.net/gh/izyq/izyq.github.io@master/2021/01/23/qiang-k/pasted-0.png" class="responsive-img" alt="python实现强智科技教务系统抢课（两种方法） ">
+                            
+                            <span class="card-title">python实现强智科技教务系统抢课（两种方法） </span>
+                        </div>
+                    </a>
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                前言又到了选课的时间，又一次被教务系统的预选给安排了，硬是一门都没选中。于是想实现有没有自动捡课的方法。就整体分为两种方法，一种是获取get请求然后由python多线程提交去选课，一种是利用自动化测试的selenium库去调用谷歌浏览器模拟
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-08-01
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/%E6%8A%98%E8%85%BE/" class="post-category">
+                                    折腾
+                                </a>
+                                
+                                <a href="/categories/Project/" class="post-category">
+                                    Project
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/Python/">
+                            <span class="chip bg-color">Python</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
             </div>
-            <div class="tag-chips">
-                
-                
-                
-                <a href="/categories/%E6%8A%98%E8%85%BE/" title="折腾: 7">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            style="background-color: #F9EBEA;">折腾
-                        <span class="tag-length">7</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/categories/Python/" title="Python: 2">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            style="background-color: #F5EEF8;">Python
-                        <span class="tag-length">2</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/categories/C%E8%AF%AD%E8%A8%80/" title="C语言: 2">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            style="background-color: #D5F5E3;">C语言
-                        <span class="tag-length">2</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/categories/%E7%BD%91%E7%BB%9C/" title="网络: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            style="background-color: #E8F8F5;">网络
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/categories/Project/" title="Project: 2">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            style="background-color: #FEF9E7;">Project
-                        <span class="tag-length">2</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/categories/SQL/" title="SQL: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            style="background-color: #F8F9F9;">SQL
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/" title="嵌入式: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            style="background-color: #82E0AA;">嵌入式
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/categories/Others/" title="Others: 2">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            style="background-color: #D7BDE2;">Others
-                        <span class="tag-length">2</span>
-                    </span>
-                </a>
-                
-                
+            
+            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2020/07/16/cupk/">
+                        <div class="card-image tag-image">
+                            
+                            <img src="https://www.cupk.edu.cn/upload/resources/image/2020/10/14/49697.jpg" class="responsive-img" alt="CUPKNotice部署到Linux上">
+                            
+                            <span class="card-title">CUPKNotice部署到Linux上</span>
+                        </div>
+                    </a>
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                安装Python3.7 并解决ssl问题安装Pythonyum install -y zlib zlib-dev openssl-devel sqlite-devel bzip2-devel libffi libffi-devel gcc 
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-16
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/Python/" class="post-category">
+                                    Python
+                                </a>
+                                
+                                <a href="/categories/Project/" class="post-category">
+                                    Project
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/Linux/">
+                            <span class="chip bg-color">Linux</span>
+                        </a>
+                        
+                        <a href="/tags/Python/">
+                            <span class="chip bg-color">Python</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
             </div>
+            
         </div>
-    </div>
-</div>
-
-
-    
-    <style type="text/css">
-    #category-radar {
-        width: 100%;
-        height: 360px;
-    }
-</style>
-
-<div class="container" data-aos="fade-up">
-    <div class="card">
-        <div id="category-radar" class="card-content"></div>
-    </div>
-</div>
-
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/izyq/izyq.github.io@gh-pages/libs/echarts/echarts.min.js"></script>
-<script type="text/javascript">
-    let radarChart = echarts.init(document.getElementById('category-radar'));
-
-    
-
-    let option = {
-        title: {
-            left: 'center',
-            text: '文章分类雷达图',
-            textStyle: {
-                fontWeight: 500,
-                fontSize: 22
-            }
-        },
-        tooltip: {},
-        radar: {
-            name: {
-                textStyle: {
-                    color: '#3C4858'
-                }
-            },
-            indicator: [{"name":"折腾","max":8},{"name":"Python","max":8},{"name":"C语言","max":8},{"name":"网络","max":8},{"name":"Project","max":8},{"name":"SQL","max":8},{"name":"嵌入式","max":8},{"name":"Others","max":8}],
-            nameGap: 5,
-            center: ['50%','55%'],
-            radius: '66%'
-        },
-        series: [{
-            type: 'radar',
-            color: ['#3ecf8e'],
-            itemStyle: {normal: {areaStyle: {type: 'default'}}},
-            data : [
-                {
-                    value : [7,2,2,1,2,1,1,2],
-                    name : '文章分类数量'
-                }
-            ]
-        }]
-    };
-
-    radarChart.setOption(option);
-</script>
-
-    
-
+    </article>
 </main>
+
+
 
 
     <footer class="page-footer footer-bg-color">
