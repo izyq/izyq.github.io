@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>yourls安装</title>
+      <link href="/2023/06/06/yourls-an-zhuang/"/>
+      <url>/2023/06/06/yourls-an-zhuang/</url>
+      
+        <content type="html"><![CDATA[<p>docker hub</p><p><a href="https://hub.docker.com/_/yourls/">yourls - Official Image | Docker Hub</a></p><p>如何安装更多 PHP 扩展</p><p><a href="https://github.com/docker-library/docs/blob/master/php/README.md#how-to-install-more-php-extensions">docs/README.md at master · docker-library/docs · GitHub</a></p><h3 id="编写Dockerfile-安装composer和gd"><a href="#编写Dockerfile-安装composer和gd" class="headerlink" title="编写Dockerfile  安装composer和gd"></a>编写Dockerfile  安装composer和gd</h3><p>这里少装了个git</p><pre class="line-numbers language-none"><code class="language-none">FROM yourls:latestRUN apt-get update &amp;&amp; apt-get install -y \libfreetype6-dev \libjpeg62-turbo-dev \libpng-dev \&amp;&amp; docker-php-ext-configure gd --with-freetype --with-jpeg \&amp;&amp; docker-php-ext-install -j$(nproc) gdRUN curl -sS https:&#x2F;&#x2F;getcomposer.org&#x2F;installer | php -- --install-dir&#x3D;&#x2F;usr&#x2F;local&#x2F;bin --filename&#x3D;composer<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h3 id="构建镜像"><a href="#构建镜像" class="headerlink" title="构建镜像"></a>构建镜像</h3><pre class="line-numbers language-none"><code class="language-none">docker build -t yourls .<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h3 id="运行容器"><a href="#运行容器" class="headerlink" title="运行容器"></a>运行容器</h3><pre class="line-numbers language-none"><code class="language-none">docker run --name yourls \   -e YOURLS_DB_HOST&#x3D;数据库地址 \   -e YOURLS_DB_USER&#x3D;数据库账号 \   -e YOURLS_DB_PASS&#x3D;数据库密码 \   -e YOURLS_SITE&#x3D;&quot;你的网站地址&quot; \   -e YOURLS_USER&#x3D;&quot;YOURLS用户名&quot; \   -e YOURLS_PASS&#x3D;&quot;YOURLS密码&quot; \   -p 80:80 \   -v &#x2F;root&#x2F;yourls:&#x2F;var&#x2F;www&#x2F;html&#x2F;user \   -d yourls<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h3 id="二维码插件"><a href="#二维码插件" class="headerlink" title="二维码插件"></a>二维码插件</h3><p><a href="https://github.com/seandrickson/YOURLS-QRCode-Plugin">GitHub - seandrickson/YOURLS-QRCode-Plugin: YOURLS QR Code Plugin – allows you to get the QR code by simply clicking on a button in the Admin area (or by adding “.qr” to the end of the keyword.)</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 折腾 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 短链接 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Git学习</title>
       <link href="/2022/02/24/learn-git/"/>
       <url>/2022/02/24/learn-git/</url>
@@ -173,31 +198,6 @@
       <categories>
           
           <category> 嵌入式 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> STM32 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>测试GitHub action</title>
-      <link href="/2021/03/26/test/"/>
-      <url>/2021/03/26/test/</url>
-      
-        <content type="html"><![CDATA[<h2 id="测试GitHub-action-3"><a href="#测试GitHub-action-3" class="headerlink" title="测试GitHub action 3"></a>测试GitHub action 3</h2>]]></content>
-      
-      
-      <categories>
-          
-          <category> Project </category>
           
       </categories>
       
