@@ -356,14 +356,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-06-06
+                    2023-06-07
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    533
+                    534
                 </div>
                 
 
@@ -388,24 +388,29 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p> 今天服务器突然崩了，使用的amh面板，执行<code>/etc/init.d/amh-start</code>后所有服务均出现相同的一个错误提示<code>No space left on device</code></p>
-<h1 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h1><h3 id="排查"><a href="#排查" class="headerlink" title="排查"></a>排查</h3><p>查看磁盘空间使用情况，使用<code>df -h</code>命令，磁盘显然没有占满，那是什么问题呢？一番搜寻后发现居然有个叫inode的东西。引起了我的注意。</p>
-<h3 id="查看inodess使用情况，使用df-i命令"><a href="#查看inodess使用情况，使用df-i命令" class="headerlink" title="查看inodess使用情况，使用df -i命令"></a>查看inodess使用情况，使用<code>df -i</code>命令</h3><p><img src="https://cdn.jsdelivr.net/gh/izyq/izyq.github.io@master/2021/01/23/inode/pasted-0.png" alt="奔跑博客"><br>由于我没有截图，所以借用一张网图。</p>
-<h3 id="inodes耗尽解决"><a href="#inodes耗尽解决" class="headerlink" title="inodes耗尽解决"></a>inodes耗尽解决</h3><ul>
+                <h1>问题</h1>
+<p>今天服务器突然崩了，使用的amh面板，执行<code>/etc/init.d/amh-start</code>后所有服务均出现相同的一个错误提示<code>No space left on device</code></p>
+<h1>解决</h1>
+<h3 id="排查">排查</h3>
+<p>查看磁盘空间使用情况，使用<code>df -h</code>命令，磁盘显然没有占满，那是什么问题呢？一番搜寻后发现居然有个叫inode的东西。引起了我的注意。</p>
+<h3 id="查看inodess使用情况，使用df-i命令">查看inodess使用情况，使用<code>df -i</code>命令</h3>
+<p><img src="https://cdn.jsdelivr.net/gh/izyq/izyq.github.io@master/2021/01/23/inode/pasted-0.png" alt="" loading="lazy"><br>
+由于我没有截图，所以借用一张网图。</p>
+<h3 id="inodes耗尽解决">inodes耗尽解决</h3>
+<ul>
 <li>（1）查看文件最多的目录</li>
 </ul>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token keyword">for</span> <span class="token for-or-select variable">i</span> <span class="token keyword">in</span> /*<span class="token punctuation">;</span> <span class="token keyword">do</span> <span class="token builtin class-name">echo</span> <span class="token variable">$i</span><span class="token punctuation">;</span> <span class="token function">find</span> <span class="token variable">$i</span> <span class="token operator">|</span> <span class="token function">wc</span> -l<span class="token punctuation">;</span> <span class="token keyword">done</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>  如果确定目录范围，把/*写的具体点</p>
+<p>如果确定目录范围，把/*写的具体点</p>
 <p>最终发现是<code>/var/spool/postfix/maildrop</code>目录下小文件过多，原因如下：</p>
 <p><em>由于linux在执行cron时，会将cron执行脚本中的output和warning信息，都会以邮件的形式发送给cron所有者。由于客户环境中的sendmail和postfix没有正常运行，邮件发送不成功，导致全部小文件都堆积在maildrop目录下，另由于缺乏自动清理的机制，故此目录下堆积了大量的文件。</em></p>
 <ul>
 <li>（2）删除大量文件</li>
 </ul>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">ls</span> <span class="token operator">|</span> <span class="token function">xargs</span> <span class="token parameter variable">-n</span> <span class="token number">1000</span> <span class="token function">rm</span> <span class="token parameter variable">-rf</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <p>需要使用<code>xargs</code>命令，不然会删除失败。</p>
-<h1 id="inodes介绍"><a href="#inodes介绍" class="headerlink" title="inodes介绍"></a>inodes介绍</h1><p>Linux系统下文件数据储存在”块”中，文件的元信息，例如文件的创建者、文件的创建日期、文件的大小等。这种储存文件元信息的区域就叫做inode，中文译名为”索引节点”。</p>
+<h1>inodes介绍</h1>
+<p>Linux系统下文件数据储存在”块”中，文件的元信息，例如文件的创建者、文件的创建日期、文件的大小等。这种储存文件元信息的区域就叫做inode，中文译名为”索引节点”。</p>
 <p>inode也占用硬盘空间，硬盘格式化的时候，操作系统自动将硬盘分成两个区域。一个是数据区，存放文件数据；另一个是inode区（inode table），存放inode所包含的信息。</p>
 <p>每个inode节点的大小，一般是128字节或256字节。inode节点的总数，在格式化时就给定，一般是每1KB或每2KB就设置一个inode。假定在一块1GB的硬盘中，每个inode节点的大小为128字节，每1KB就设置一个inode，那么inode table的大小就会达到128MB，占整块硬盘的12.8%。</p>
 

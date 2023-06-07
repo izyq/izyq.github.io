@@ -364,14 +364,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-06-06
+                    2023-06-07
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    591
+                    597
                 </div>
                 
 
@@ -396,7 +396,9 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="安装Python3-7-并解决ssl问题"><a href="#安装Python3-7-并解决ssl问题" class="headerlink" title="安装Python3.7 并解决ssl问题"></a>安装Python3.7 并解决ssl问题</h2><h3 id="安装Python"><a href="#安装Python" class="headerlink" title="安装Python"></a>安装Python</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">yum <span class="token function">install</span> <span class="token parameter variable">-y</span> zlib zlib-dev openssl-devel sqlite-devel bzip2-devel libffi libffi-devel gcc gcc-c++
+                <h2 id="安装Python3-7-并解决ssl问题">安装Python3.7 并解决ssl问题</h2>
+<h3 id="安装Python">安装Python</h3>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">yum <span class="token function">install</span> <span class="token parameter variable">-y</span> zlib zlib-dev openssl-devel sqlite-devel bzip2-devel libffi libffi-devel gcc gcc-c++
 <span class="token function">wget</span> http://www.openssl.org/source/openssl-1.1.1.tar.gz
 <span class="token function">tar</span> <span class="token parameter variable">-zxvf</span> openssl-1.1.1.tar.gz
 <span class="token builtin class-name">cd</span> openssl-1.1.1
@@ -414,9 +416,11 @@ yum <span class="token function">install</span> python-pip <span class="token pa
 <span class="token function">make</span> <span class="token operator">&amp;&amp;</span> <span class="token function">make</span> <span class="token function">install</span>
 <span class="token function">ln</span> <span class="token parameter variable">-s</span> /usr/local/python3/bin/python3.7 /usr/bin/python3.7 
 <span class="token function">ln</span> <span class="token parameter variable">-s</span> /usr/local/python3/bin/pip3.7 /usr/bin/pip3.7<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="1-安装openssl"><a href="#1-安装openssl" class="headerlink" title="1.安装openssl"></a>1.安装openssl</h3><p>首先要安装openssl，因为python3需要引用openssl模块，但是centos需要的openssl版本最低为1.0.2，但是centos 默认的为1.0.1，所以需要重新更新openssl</p>
+<h3 id="1-安装openssl">1.安装openssl</h3>
+<p>首先要安装openssl，因为python3需要引用openssl模块，但是centos需要的openssl版本最低为1.0.2，但是centos 默认的为1.0.1，所以需要重新更新openssl</p>
 <hr>
-<h3 id="2-测试https是否可用"><a href="#2-测试https是否可用" class="headerlink" title="2.测试https是否可用"></a>2.测试https是否可用</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> urllib<span class="token punctuation">.</span>request
+<h3 id="2-测试https是否可用">2.测试https是否可用</h3>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> urllib<span class="token punctuation">.</span>request
 
 url <span class="token operator">=</span> <span class="token string">'https://www.baidu.com'</span>
 b <span class="token operator">=</span> urllib<span class="token punctuation">.</span>request<span class="token punctuation">.</span>urlopen<span class="token punctuation">(</span>url<span class="token punctuation">)</span>
@@ -424,12 +428,14 @@ b <span class="token operator">=</span> urllib<span class="token punctuation">.<
 <span class="token keyword">print</span> <span class="token punctuation">(</span>b<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>报错</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">urllib.error.URLError: <span class="token operator">&lt;</span>urlopen error <span class="token punctuation">[</span>SSL: CERTIFICATE_VERIFY_FAILED<span class="token punctuation">]</span> certificate verify failed <span class="token punctuation">(</span>_ssl.c:833<span class="token punctuation">)</span><span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h5 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h5><p>全局取消证书验证</p>
+<h5 id="解决方法">解决方法</h5>
+<p>全局取消证书验证</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">import</span> ssl
 ssl._create_default_https_context <span class="token operator">=</span> ssl._create_unverified_context<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<h3 id="3-安装依赖"><a href="#3-安装依赖" class="headerlink" title="3.安装依赖"></a>3.安装依赖</h3><p>安装requirements.txt依赖：pip install -r requirements.txt</p>
-<p>问题：cenos自带python2，如电脑上同时装了python2(2.7)和python3(3.7)，当使用pip安装时默认应安装到python2中，pip3安装时应安装到python3中，但奇怪的是使用pip安装时每次都定位到python3中，不知是啥原因，也不知如何将其重定向到python2中，索性手动指定pip到python2中<br>查看pip版本</p>
+<h3 id="3-安装依赖">3.安装依赖</h3>
+<p>安装requirements.txt依赖：pip install -r requirements.txt</p>
+<p>问题：cenos自带python2，如电脑上同时装了python2(2.7)和python3(3.7)，当使用pip安装时默认应安装到python2中，pip3安装时应安装到python3中，但奇怪的是使用pip安装时每次都定位到python3中，不知是啥原因，也不知如何将其重定向到python2中，索性手动指定pip到python2中<br>
+查看pip版本</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">pip <span class="token parameter variable">-V</span> pip <span class="token number">18.0</span> from /usr/local/lib/python3.5/dist-packages/pip <span class="token punctuation">(</span>python <span class="token number">3.5</span><span class="token punctuation">)</span>
 pip2 <span class="token parameter variable">-V</span> pip <span class="token number">8.1</span>.1 from /usr/lib/python2.7/dist-packages <span class="token punctuation">(</span>python <span class="token number">2.7</span><span class="token punctuation">)</span>
 pip3 <span class="token parameter variable">-V</span> pip <span class="token number">18.0</span> from /usr/local/lib/python3.5/dist-packages/pip <span class="token punctuation">(</span>python <span class="token number">3.5</span><span class="token punctuation">)</span>
@@ -437,10 +443,13 @@ pip3 <span class="token parameter variable">-V</span> pip <span class="token num
 pip指定python版本安装
 安装到python2.7版本中：sudo pip2 <span class="token function">install</span> 模块名 或 python2 <span class="token parameter variable">-m</span> pip <span class="token function">install</span> 模块名
 安装到python3.5版本中：sudo pip3 <span class="token function">install</span> 模块名 或 python3.5 <span class="token parameter variable">-m</span> pip <span class="token function">install</span> 模块名<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="4-linux-中后台运行python脚本"><a href="#4-linux-中后台运行python脚本" class="headerlink" title="4.linux 中后台运行python脚本"></a>4.linux 中后台运行python脚本</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">nohup</span> python yourscript.py <span class="token operator">&amp;</span>可以让你的程序在后台运行，控制台输出导向nohup.out文件
+<h3 id="4-linux-中后台运行python脚本">4.linux 中后台运行python脚本</h3>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">nohup</span> python yourscript.py <span class="token operator">&amp;</span>可以让你的程序在后台运行，控制台输出导向nohup.out文件
 
 使用nobup命令 结尾处加一个<span class="token operator">&amp;</span> 符号<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<h5 id="2、关闭命令"><a href="#2、关闭命令" class="headerlink" title="2、关闭命令"></a>2、关闭命令</h5><h6 id="1、查看进程"><a href="#1、查看进程" class="headerlink" title="1、查看进程"></a>1、查看进程</h6><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">
+<h5 id="2、关闭命令">2、关闭命令</h5>
+<h6 id="1、查看进程">1、查看进程</h6>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">
     <span class="token comment"># ps -ef|grep python</span>
 
     或者
@@ -449,7 +458,8 @@ pip指定python版本安装
 <span class="token number">2</span>、关闭进程
 
     <span class="token comment"># kill -9 19913</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h5 id="3、检查"><a href="#3、检查" class="headerlink" title="3、检查"></a>3、检查</h5><p>用1中查看进程的命令，检查或确认进程是否真正被关闭。</p>
+<h5 id="3、检查">3、检查</h5>
+<p>用1中查看进程的命令，检查或确认进程是否真正被关闭。</p>
 
                 
             </div>

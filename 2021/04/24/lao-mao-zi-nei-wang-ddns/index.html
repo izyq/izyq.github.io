@@ -343,7 +343,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-06-06
+                    2023-06-07
                 </div>
                 
 
@@ -375,7 +375,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p><img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master/20210424233043.png"></p>
+                <p><img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master/20210424233043.png" alt="" loading="lazy"></p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">ifconfig</span> <span class="token variable"><span class="token variable">$(</span>nvram get wan0_ifname_t<span class="token variable">)</span></span> <span class="token operator">|</span> <span class="token function">awk</span> <span class="token parameter variable">-F</span> <span class="token string">":"</span> <span class="token string">'&#123;print $2&#125;'</span> <span class="token operator">|</span> <span class="token function">grep</span> <span class="token parameter variable">-E</span> <span class="token parameter variable">-o</span> <span class="token string">'([0-9]+\.)&#123;3&#125;[0-9]+'</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>主要是<code>ifconfig $(nvram get wan0_ifname_t)</code>获取本地ip信息，再通过<code>awk</code>和<code>grep</code>提取</p>
 

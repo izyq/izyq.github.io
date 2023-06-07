@@ -356,7 +356,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-06-06
+                    2023-06-07
                 </div>
                 
 
@@ -388,7 +388,8 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="头文件写法"><a href="#头文件写法" class="headerlink" title="头文件写法"></a>头文件写法</h3><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#防卫式声明
+                <h3 id="头文件写法">头文件写法</h3>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#防卫式声明
 #ifndef _COMPLEX_ &#x2F;&#x2F;如果没有定义这个‘_COMPLEX_’ 
 #define _COMPLEX_ &#x2F;&#x2F;如果没有定义这个‘_COMPLEX_’ ，则定义这个‘_COMPLEX_’
 &#x2F;&#x2F;第一次include 就会定义这个_COMPLEX_
@@ -398,37 +399,43 @@
 ···
     
 #endif<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>自己写的头文件用<code>#include “name”</code> 即用双引号引用</p>
-<h3 id="类模板"><a href="#类模板" class="headerlink" title="类模板"></a>类模板</h3><p><img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master/image-20211103213406959.png"></p>
+<h3 id="类模板">类模板</h3>
+<p><img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master/image-20211103213406959.png" alt="" loading="lazy"></p>
 <p>如果是这样 那么<code>re，im</code>就被写死了，这好吗？这不好。</p>
 <p>如果需要一个float类型或者整型类型的话难到要重新写一个类吗？</p>
 <p>这时候就用到类模板，不把变量类型写死</p>
-<p>  所以这样</p>
-<p><img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master/image-20211103214052692.png" alt="注意黄字部分"></p>
+<p>所以这样</p>
+<p><img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master/image-20211103214052692.png" alt="" loading="lazy"></p>
 <p>那么我们使用时只需这样</p>
 <p><code>complex&lt;double&gt; c1(2.5,1.5)</code> <code>re，im</code>就是<code>double</code>型</p>
 <p><code>complex&lt;int&gt; c2(2,6)</code> <code>re，im</code>就是<code>int</code>型</p>
-<h3 id="inline（内联）函数"><a href="#inline（内联）函数" class="headerlink" title="inline（内联）函数"></a>inline（内联）函数</h3><ul>
-<li><p>定义 </p>
+<h3 id="inline（内联）函数">inline（内联）函数</h3>
+<ul>
+<li>
+<p>定义</p>
 <ul>
 <li>定义在class里的函数</li>
 </ul>
 </li>
-<li><p>优点</p>
+<li>
+<p>优点</p>
 <ul>
 <li>速度快</li>
 <li>有宏的特性，没有宏的缺点</li>
 </ul>
 </li>
-<li><p>缺点</p>
+<li>
+<p>缺点</p>
 <ul>
 <li>过于复杂的inline func不会被编译器定义成inline</li>
 </ul>
 </li>
 </ul>
-<h3 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h3><ul>
-<li>特别之处<ul>
+<h3 id="构造函数">构造函数</h3>
+<ul>
+<li>特别之处
+<ul>
 <li>函数名称和类的名称相同</li>
 <li>没有返回类型，也不需要有</li>
 <li>构造函数就是用来创建对象的</li>
@@ -437,20 +444,24 @@
 </ul>
 </li>
 </ul>
-<p><img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master/image-20211103221805093.png" alt="初值列"></p>
-<h3 id="参数传递"><a href="#参数传递" class="headerlink" title="参数传递"></a>参数传递</h3><ul>
-<li>尽量用引用 <ul>
+<p><img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master/image-20211103221805093.png" alt="" loading="lazy"></p>
+<h3 id="参数传递">参数传递</h3>
+<ul>
+<li>尽量用引用
+<ul>
 <li>如果不想传进去的参数被修改，加<code>const</code></li>
 </ul>
 </li>
 </ul>
-<h3 id="友元（friends）"><a href="#友元（friends）" class="headerlink" title="友元（friends）"></a>友元（friends）</h3><ul>
+<h3 id="友元（friends）">友元（friends）</h3>
+<ul>
 <li>友元可以调用Private</li>
 <li>相同的class互为友元</li>
 </ul>
-<p><img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master/image-20211103233743036.png" alt="image-20211103233743036"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master/image-20211103233743036.png" alt="" loading="lazy"></p>
 <p><code>c2</code>通过<code>func</code>直接访问<code>c1</code>的<code>re im</code></p>
-<h3 id="成员函数"><a href="#成员函数" class="headerlink" title="成员函数"></a>成员函数</h3><ul>
+<h3 id="成员函数">成员函数</h3>
+<ul>
 <li>任何一个成员函数都有一个隐藏的this指针</li>
 <li>this指针指向这个调用者 ，即谁调用，指向谁</li>
 </ul>

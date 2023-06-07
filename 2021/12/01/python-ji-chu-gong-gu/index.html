@@ -356,7 +356,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-06-06
+                    2023-06-07
                 </div>
                 
 
@@ -388,7 +388,8 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="标识符"><a href="#标识符" class="headerlink" title="标识符"></a>标识符</h3><ul>
+                <h3 id="标识符">标识符</h3>
+<ul>
 <li>首字符是字母或下划线</li>
 <li>其余可以是<strong>字母、下划线、数字</strong></li>
 <li>大小写敏感(PI和pi是不同的标识符)</li>
@@ -399,14 +400,15 @@
 <span class="token keyword">print</span><span class="token punctuation">(</span>keyword<span class="token punctuation">.</span>kwlist<span class="token punctuation">)</span>
 <span class="token comment">#输出：</span>
 <span class="token punctuation">[</span><span class="token string">'False'</span><span class="token punctuation">,</span> <span class="token string">'None'</span><span class="token punctuation">,</span> <span class="token string">'True'</span><span class="token punctuation">,</span> <span class="token string">'and'</span><span class="token punctuation">,</span> <span class="token string">'as'</span><span class="token punctuation">,</span> <span class="token string">'assert'</span><span class="token punctuation">,</span> <span class="token string">'async'</span><span class="token punctuation">,</span> <span class="token string">'await'</span><span class="token punctuation">,</span> <span class="token string">'break'</span><span class="token punctuation">,</span> <span class="token string">'class'</span><span class="token punctuation">,</span> <span class="token string">'continue'</span><span class="token punctuation">,</span> <span class="token string">'def'</span><span class="token punctuation">,</span> <span class="token string">'del'</span><span class="token punctuation">,</span> <span class="token string">'elif'</span><span class="token punctuation">,</span> <span class="token string">'else'</span><span class="token punctuation">,</span> <span class="token string">'except'</span><span class="token punctuation">,</span> <span class="token string">'finally'</span><span class="token punctuation">,</span> <span class="token string">'for'</span><span class="token punctuation">,</span> <span class="token string">'from'</span><span class="token punctuation">,</span> <span class="token string">'global'</span><span class="token punctuation">,</span> <span class="token string">'if'</span><span class="token punctuation">,</span> <span class="token string">'import'</span><span class="token punctuation">,</span> <span class="token string">'in'</span><span class="token punctuation">,</span> <span class="token string">'is'</span><span class="token punctuation">,</span> <span class="token string">'lambda'</span><span class="token punctuation">,</span> <span class="token string">'nonlocal'</span><span class="token punctuation">,</span> <span class="token string">'not'</span><span class="token punctuation">,</span> <span class="token string">'or'</span><span class="token punctuation">,</span> <span class="token string">'pass'</span><span class="token punctuation">,</span> <span class="token string">'raise'</span><span class="token punctuation">,</span> <span class="token string">'return'</span><span class="token punctuation">,</span> <span class="token string">'try'</span><span class="token punctuation">,</span> <span class="token string">'while'</span><span class="token punctuation">,</span> <span class="token string">'with'</span><span class="token punctuation">,</span> <span class="token string">'yield'</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="表达式"><a href="#表达式" class="headerlink" title="表达式"></a>表达式</h3><p>用运算符（<strong>除了赋值运算符</strong>）连接各种类型数据的式子就是表达式</p>
+<h3 id="表达式">表达式</h3>
+<p>用运算符（<strong>除了赋值运算符</strong>）连接各种类型数据的式子就是表达式</p>
 <ul>
 <li>运算符有优先级顺序</li>
 <li>表达式必须有运算结果</li>
 <li>单个常量或变量可以看作是最简单的表达式 例如：3，‘a’</li>
 </ul>
-<h3 id="数字"><a href="#数字" class="headerlink" title="数字"></a>数字</h3><ul>
+<h3 id="数字">数字</h3>
+<ul>
 <li>Python支持任意大的数字，具体可以大到什么程度仅受内存大小的限制。</li>
 <li>由于精度的问题，对于实数运算可能会有一定的误差，<strong>应尽量避免在实数之间直接进行相等性测试</strong>，而是应该以二者之差的绝对值是否<strong>足够小</strong>作为两个实数是否相等的依据。</li>
 <li>在数字的算术运算表达式求值时会进行隐式的类型转换</li>
@@ -415,8 +417,8 @@
 <span class="token boolean">False</span>
 <span class="token operator">>></span><span class="token operator">></span> <span class="token builtin">abs</span><span class="token punctuation">(</span><span class="token number">0.4</span><span class="token operator">-</span><span class="token number">0.1</span> <span class="token operator">-</span> <span class="token number">0.3</span><span class="token punctuation">)</span> <span class="token operator">&lt;</span> <span class="token number">1e-6</span> <span class="token comment">#这里1e-6表示10的-6次方</span>
 <span class="token boolean">True</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="切片"><a href="#切片" class="headerlink" title="切片"></a>切片</h3><p>[N,M] 不包括M</p>
+<h3 id="切片">切片</h3>
+<p>[N,M] 不包括M</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">k表示步进，缺省为<span class="token number">1</span>
 当k<span class="token operator">&lt;</span><span class="token number">0</span>时，a<span class="token punctuation">[</span>i<span class="token punctuation">,</span>j<span class="token punctuation">,</span>k<span class="token punctuation">]</span>表示从a<span class="token punctuation">[</span>i<span class="token punctuation">]</span>开始<span class="token punctuation">(</span>含a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span>到a<span class="token punctuation">[</span>j<span class="token punctuation">]</span>结束<span class="token punctuation">(</span>不含a<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span>，且顺序是从后向前进行遍历，返回遍历结果。
 i缺省时，默认为<span class="token operator">-</span><span class="token number">1.</span> j缺省时，默认为<span class="token operator">-</span><span class="token builtin">len</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span>
@@ -424,19 +426,18 @@ i缺省时，默认为<span class="token operator">-</span><span class="token nu
 当i缺省时，默认为<span class="token number">0</span>
 当j缺省时，默认为<span class="token builtin">len</span><span class="token punctuation">(</span>alist<span class="token punctuation">)</span>
 k的正负值的改变只是改变了遍历的方向而已<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="赋值语句"><a href="#赋值语句" class="headerlink" title="赋值语句"></a>赋值语句</h3><p><code>a,b = b,a</code> 可以实现a和b的值互换</p>
+<h3 id="赋值语句">赋值语句</h3>
+<p><code>a,b = b,a</code> 可以实现a和b的值互换</p>
 <p>同样<code>a,b ,c= c,b,a</code>也是可以的</p>
-<h3 id="Round"><a href="#Round" class="headerlink" title="Round"></a>Round</h3><p>返回浮点数的四舍五入值</p>
+<h3 id="Round">Round</h3>
+<p>返回浮点数的四舍五入值</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token keyword">in</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">]</span>
 <span class="token boolean">False</span>
 <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token keyword">in</span> <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">]</span>
 <span class="token boolean">True</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-<p><img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master/image-20211106221358354.png"></p>
-<h3 id="区间"><a href="#区间" class="headerlink" title="区间"></a>区间</h3><ul>
+<p><img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master/image-20211106221358354.png" alt="" loading="lazy"></p>
+<h3 id="区间">区间</h3>
+<ul>
 <li>range 左开右闭</li>
 </ul>
 <p>字符串 不可变类型</p>
@@ -448,11 +449,11 @@ k的正负值的改变只是改变了遍历的方向而已<span aria-hidden="tru
 <span class="token builtin">str</span><span class="token punctuation">.</span>strip<span class="token punctuation">(</span>‘<span class="token operator">*</span>’<span class="token punctuation">)</span>
 ‘python’
 <span class="token comment">#会把首尾重复的都删除掉</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>理解 append 与 extend 方法的区别</p>
 <p>append 表示把某个数据当作新元素追加到列表的最后面，它的参数可以是<strong>任意对象</strong>：</p>
 <p>extend 的参数必须是<strong>可迭代对象</strong>，表示把该对象里面所有元素<strong>逐个</strong>地追加到列表的后面。</p>
-<h3 id="深拷贝-浅拷贝"><a href="#深拷贝-浅拷贝" class="headerlink" title="深拷贝 浅拷贝"></a>深拷贝 浅拷贝</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> copy
+<h3 id="深拷贝-浅拷贝">深拷贝 浅拷贝</h3>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> copy
 List <span class="token operator">=</span> <span class="token punctuation">[</span>“张三”<span class="token punctuation">,</span>”李四”<span class="token punctuation">,</span><span class="token punctuation">[</span>”大王五”<span class="token punctuation">,</span>”小王五”<span class="token punctuation">]</span><span class="token punctuation">]</span>
 <span class="token comment">#等号：列表对象地址的拷贝，并没有实现拷贝数据</span>
 List1 <span class="token operator">=</span> List
@@ -469,17 +470,23 @@ List<span class="token punctuation">:</span><span class="token punctuation">[</s
 等号<span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token string">'张三'</span><span class="token punctuation">,</span> <span class="token string">'李四'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">'大王五'</span><span class="token punctuation">,</span> <span class="token string">'小王五'</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
 浅拷贝<span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token string">'张三'</span><span class="token punctuation">,</span> <span class="token string">'李四'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">'大王五'</span><span class="token punctuation">,</span> <span class="token string">'小王五'</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
 深拷贝<span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token string">'张三'</span><span class="token punctuation">,</span> <span class="token string">'李四'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">'大王五'</span><span class="token punctuation">,</span> <span class="token string">'小王五'</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="如何对列表进行排序"><a href="#如何对列表进行排序" class="headerlink" title="如何对列表进行排序"></a>如何对列表进行排序</h3><p>列表排序有两种方式，一种是列表自带的方法sort()，注意：sort()是原地操作；一种是内建函数<code>sorted()</code>，<strong>返回新的列表</strong>。复杂的数据类型可通过指定key参数进行排序。</p>
+<h3 id="如何对列表进行排序">如何对列表进行排序</h3>
+<p>列表排序有两种方式，一种是列表自带的方法sort()，注意：sort()是原地操作；一种是内建函数<code>sorted()</code>，<strong>返回新的列表</strong>。复杂的数据类型可通过指定key参数进行排序。</p>
 <p>remove 移除某个元素，而且只能移除第一次出现的元素。</p>
 <p>del关键字 根据指定的位置移除某元素；</p>
-<p> pop 方法可以返回移除的元素</p>
-<p>tuple没有append()、insert()方法，也不能赋值成另外的元素，其他获取方法和list是一样的。<br>因为tuple不可变，所以代码更安全，如有可能，尽量使用tuple代替list。</p>
-<h3 id="字典"><a href="#字典" class="headerlink" title="字典"></a>字典</h3><p>字典的迭代，dic.items()可查看字典的每一对键值对，注意：如果直接对字典对象进行迭<br>代或者遍历时默认是遍历字典的“键”：</p>
+<p>pop 方法可以返回移除的元素</p>
+<p>tuple没有append()、insert()方法，也不能赋值成另外的元素，其他获取方法和list是一样的。<br>
+因为tuple不可变，所以代码更安全，如有可能，尽量使用tuple代替list。</p>
+<h3 id="字典">字典</h3>
+<p>字典的迭代，dic.items()可查看字典的每一对键值对，注意：如果直接对字典对象进行迭<br>
+代或者遍历时默认是遍历字典的“键”：</p>
 <p>使用 dic.clear()方法删除字典</p>
 <p>aStock = {} 只删除了引用，并没有清空字典</p>
-<h3 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h3><p>如果原序列或可迭代对象中有可变（不可哈希）的值，无法转换成为集合，抛出异常</p>
-<h4 id="增加集合元素"><a href="#增加集合元素" class="headerlink" title="增加集合元素"></a>增加集合元素</h4><p>集合对象的 add()方法可以增加新元素，如果该元素已存在则忽略该操作，不会抛出异常；<br>update()方法合并另外一个集合中的元素到当前集合中，并自动去除重复元素。</p>
+<h3 id="集合">集合</h3>
+<p>如果原序列或可迭代对象中有可变（不可哈希）的值，无法转换成为集合，抛出异常</p>
+<h4 id="增加集合元素">增加集合元素</h4>
+<p>集合对象的 add()方法可以增加新元素，如果该元素已存在则忽略该操作，不会抛出异常；<br>
+update()方法合并另外一个集合中的元素到当前集合中，并自动去除重复元素。</p>
 <p>集合具有无序性，只能随机删，不能指定索引</p>
 <p>.join返回的是str</p>
 <p>.join接收的也只能是str类型</p>
@@ -487,7 +494,7 @@ List<span class="token punctuation">:</span><span class="token punctuation">[</s
 <p><code>[ ]</code>列表</p>
 <p><code>&#123; &#125;</code>字典</p>
 <p><code>index（,start,end）</code></p>
-<p>字典<code>.get(  ,default)</code> 若不存在 返回默认值 </p>
+<p>字典<code>.get(  ,default)</code> 若不存在 返回默认值</p>
 
                 
             </div>

@@ -356,14 +356,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-06-06
+                    2023-06-07
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    470
+                    473
                 </div>
                 
 
@@ -388,43 +388,43 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="首先关于Hexo-admin"><a href="#首先关于Hexo-admin" class="headerlink" title="首先关于Hexo-admin"></a>首先关于Hexo-admin</h3><p>使用了一位大佬修改后的<a target="_blank" rel="noopener" href="https://blog.csdn.net/nineya_com/article/details/103384546">Hexo-admin</a>，解决了windows系统插入图片失败问题解决，通过修改源码完美解决，hexo-admin汉化，以及添加按文章存储图片功能（方便管理）</p>
-<h3 id="回归正题"><a href="#回归正题" class="headerlink" title="回归正题"></a>回归正题</h3><ul>
+                <h3 id="首先关于Hexo-admin">首先关于Hexo-admin</h3>
+<p>使用了一位大佬修改后的<a target="_blank" rel="noopener" href="https://blog.csdn.net/nineya_com/article/details/103384546">Hexo-admin</a>，解决了windows系统插入图片失败问题解决，通过修改源码完美解决，hexo-admin汉化，以及添加按文章存储图片功能（方便管理）</p>
+<h3 id="回归正题">回归正题</h3>
+<ul>
 <li>设置 SSH 使用 hexo deploy 时免输用户名密码</li>
 </ul>
-<h4 id="生成-SSH-密钥"><a href="#生成-SSH-密钥" class="headerlink" title="生成 SSH 密钥"></a>生成 SSH 密钥</h4><p>右键鼠标任意位置打开 <strong>Git Bash Here</strong>，然后输入以下命令</p>
+<h4 id="生成-SSH-密钥">生成 SSH 密钥</h4>
+<p>右键鼠标任意位置打开 <strong>Git Bash Here</strong>，然后输入以下命令</p>
 <pre class="line-numbers language-none"><code class="language-none">cd ~&#x2F;.ssh<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <p>使用 <strong>ssh-keygen</strong> 生成密钥</p>
 <pre class="line-numbers language-none"><code class="language-none">ssh-keygen -t rsa -C &quot;your_email@example.com&quot;
 Generating public&#x2F;private rsa key pair.
 Enter file in which to save the key (&#x2F;home&#x2F;you&#x2F;.ssh&#x2F;id_rsa):<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
 <p>使用默认的文件名直接enter，接下来显示如下</p>
 <pre class="line-numbers language-none"><code class="language-none">Enter passphrase (empty for no passphrase): [Type a passphrase]
 Enter same passphrase again: [Type passphrase again]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
 <p><em>按提示输入密码即可（简化流程的话在键入命令 ssh-keygen -t rsa -C “<a href="mailto:your_email@example.com">your_email@example.com</a>“ 以后的三次提示输入都可以直接回车跳过）。</em></p>
 <p><strong>密钥生成成功</strong></p>
 <pre class="line-numbers language-none"><code class="language-none">Your identification has been saved in &#x2F;home&#x2F;you&#x2F;.ssh&#x2F;id_rsa.
 Your public key has been saved in &#x2F;home&#x2F;you&#x2F;.ssh&#x2F;id_rsa.pub.
 The key fingerprint is:
 …………………此处是密钥内容…………………… your_email@example.com<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h4 id="设置-Github-项目的-Deploy-keys"><a href="#设置-Github-项目的-Deploy-keys" class="headerlink" title="设置 Github 项目的 Deploy keys"></a>设置 Github 项目的 Deploy keys</h4><p>以我的博客为例，在 izyq.github.io 的首页菜单栏中点击 Settings –&gt; Deploy keys –&gt; Add deploy key，然后将生成的 id_rsa.pub 中的内容全选复制到 key 输入框中，然后点击 Add key 完成添加公钥。</p>
+<h4 id="设置-Github-项目的-Deploy-keys">设置 Github 项目的 Deploy keys</h4>
+<p>以我的博客为例，在 <a target="_blank" rel="noopener" href="http://izyq.github.io">izyq.github.io</a> 的首页菜单栏中点击 Settings –&gt; Deploy keys –&gt; Add deploy key，然后将生成的 id_rsa.pub 中的内容全选复制到 key 输入框中，然后点击 Add key 完成添加公钥。</p>
 <p>接下来测试配置是否成功</p>
 <pre class="line-numbers language-none"><code class="language-none">$ ssh -T git@github.com<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <p>出现以下内容即表示配置完成并且成功</p>
 <pre class="line-numbers language-none"><code class="language-none">Hi username! You&#39;ve successfully authenticated, but GitHub does not
 provide shell access.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<h4 id="修改hexo根目录的配置文件"><a href="#修改hexo根目录的配置文件" class="headerlink" title="修改hexo根目录的配置文件"></a>修改hexo根目录的配置文件</h4><p>修改_config.yml 中的deploy属性，将repo改为<br><strong><a href="mailto:git@github.com">git@github.com</a>:USERNAME/REPOSITORY.git</strong><br>如下</p>
+<h4 id="修改hexo根目录的配置文件">修改hexo根目录的配置文件</h4>
+<p>修改_config.yml 中的deploy属性，将repo改为<br>
+<strong><a href="mailto:git@github.com">git@github.com</a>:USERNAME/REPOSITORY.git</strong><br>
+如下</p>
 <pre class="line-numbers language-none"><code class="language-none">deploy:
   type: git
   repo: git@github.com:izyq&#x2F;izyq.github.io.git
   branch: master<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>这个时候再尝试了 <code>$ hexo deploy</code> 就成功了，就不用老是输入密码了！</p>
 
                 

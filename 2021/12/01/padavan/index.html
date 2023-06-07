@@ -356,14 +356,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-06-06
+                    2023-06-07
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    278
+                    279
                 </div>
                 
 
@@ -388,7 +388,8 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="重启服务命令"><a href="#重启服务命令" class="headerlink" title="重启服务命令"></a>重启服务命令</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">restart_dhcpd    restart_firewall  restart_virtualvpn_client restart_wan
+                <h2 id="重启服务命令">重启服务命令</h2>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">restart_dhcpd    restart_firewall  restart_virtualvpn_client restart_wan
 restart_dns      restart_networkmap restart_virtualvpn_server
 
 
@@ -399,14 +400,17 @@ radio2_eeprom_mac   radio2_guest_disable radio2_restart     radio2_toggle_off
 5G相关的命令
 radio5_disable     radio5_enable      radio5_guest_enable  radio5_toggle      radio5_toggle_on
 radio5_eeprom_mac   radio5_guest_disable radio5_restart     radio5_toggle_off<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p> 配合计划任务，就可以定时重启各种服务了</p>
-<h2 id="NVRAM"><a href="#NVRAM" class="headerlink" title="NVRAM"></a>NVRAM</h2><p><code>nvram show</code><br>列出 <code>NVRAM</code> 内所有参数，我们亦可以用 <code>grep</code> 命令来筛选</p>
+<p>配合计划任务，就可以定时重启各种服务了</p>
+<h2 id="NVRAM">NVRAM</h2>
+<p><code>nvram show</code><br>
+列出 <code>NVRAM</code> 内所有参数，我们亦可以用 <code>grep</code> 命令来筛选</p>
 <p>这命令列出了所以用 <code>lan</code>开头的参数</p>
 <p><code>nvram show | grep lan</code></p>
 <p><code>nvram set</code> 参数=数值</p>
 <p><code>nvram set vpnc_dgw=1</code></p>
-<h2 id="自定义脚本"><a href="#自定义脚本" class="headerlink" title="自定义脚本"></a>自定义脚本</h2><h3 id="1-检测全部流量是否走VPN"><a href="#1-检测全部流量是否走VPN" class="headerlink" title="1.检测全部流量是否走VPN"></a>1.检测全部流量是否走VPN</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token shebang important">#!/bin/sh</span>
+<h2 id="自定义脚本">自定义脚本</h2>
+<h3 id="1-检测全部流量是否走VPN">1.检测全部流量是否走VPN</h3>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token shebang important">#!/bin/sh</span>
 <span class="token assign-left variable">vpnc_dwg_status</span><span class="token operator">=</span><span class="token variable"><span class="token variable">`</span>nvram get vpnc_dgw<span class="token variable">`</span></span>
 logger <span class="token parameter variable">-t</span> <span class="token string">"【check_vpn】"</span> <span class="token string">"检测是否全部流量走VPN"</span>
 <span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token string">"<span class="token variable">$vpnc_dwg_status</span>"</span> <span class="token operator">==</span> <span class="token string">"1"</span> <span class="token punctuation">]</span> <span class="token punctuation">;</span> <span class="token keyword">then</span>
@@ -416,8 +420,8 @@ logger <span class="token parameter variable">-t</span> <span class="token strin
 nvram <span class="token builtin class-name">set</span> <span class="token assign-left variable">vpnc_dgw</span><span class="token operator">=</span><span class="token number">1</span>
 restart_vpn_client
 <span class="token keyword">fi</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="2-检测桥接状态"><a href="#2-检测桥接状态" class="headerlink" title="2.检测桥接状态"></a>2.检测桥接状态</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token shebang important">#!/bin/sh</span>
+<h3 id="2-检测桥接状态">2.检测桥接状态</h3>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token shebang important">#!/bin/sh</span>
 
 <span class="token assign-left variable">ping_text</span><span class="token operator">=</span><span class="token variable"><span class="token variable">`</span><span class="token function">ping</span> <span class="token parameter variable">-4</span> <span class="token number">10.0</span>.1.1 <span class="token parameter variable">-c</span> <span class="token number">1</span> <span class="token parameter variable">-w</span> <span class="token number">4</span> <span class="token parameter variable">-q</span><span class="token variable">`</span></span>
 <span class="token assign-left variable">ping_time</span><span class="token operator">=</span><span class="token variable"><span class="token variable">`</span><span class="token builtin class-name">echo</span> $ping_text <span class="token operator">|</span> <span class="token function">awk</span> <span class="token parameter variable">-F</span> <span class="token string">'/'</span> <span class="token string">'&#123;print $4&#125;'</span><span class="token operator">|</span> <span class="token function">awk</span> <span class="token parameter variable">-F</span> <span class="token string">'.'</span> <span class="token string">'&#123;print $1&#125;'</span><span class="token variable">`</span></span>
@@ -430,7 +434,6 @@ logger <span class="token parameter variable">-t</span> <span class="token strin
 logger <span class="token parameter variable">-t</span> <span class="token string">"【wtach_wan】"</span> <span class="token string">"Internet互联网断线后自动重启WAN"</span>
 restart_wan
 <span class="token keyword">fi</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 
                 
             </div>

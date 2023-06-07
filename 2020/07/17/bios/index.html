@@ -360,14 +360,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-06-06
+                    2023-06-07
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    962
+                    963
                 </div>
                 
 
@@ -392,49 +392,70 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><blockquote>
-<p>最近打算换9代U了，是时候升级一下BIOS了，反正在寝室隔离搞完半天学习想休息一下，也没事做，开始折腾起来哈哈<br>这次时想把I58400升级为i9-9900es <em>（因为穷）</em>.<br><code>在d大的包里提供两种刷入方法，一种是dos，一种是win，win这边我打开那个软件第一步就不行，所以只能尝试第二种方法，Dos模式刷入，当然这种方法也更稳定，也是d大更推荐的方法</code></p>
+                <h2 id="写在前面">写在前面</h2>
+<blockquote>
+<p>最近打算换9代U了，是时候升级一下BIOS了，反正在寝室隔离搞完半天学习想休息一下，也没事做，开始折腾起来哈哈<br>
+这次时想把I58400升级为i9-9900es <em>（因为穷）</em>.<br>
+<code>在d大的包里提供两种刷入方法，一种是dos，一种是win，win这边我打开那个软件第一步就不行，所以只能尝试第二种方法，Dos模式刷入，当然这种方法也更稳定，也是d大更推荐的方法</code></p>
 </blockquote>
-<p> 作者提示：_点我一键刷黑.bat或_现在就刷黑.bat执行之后如果出现红字说明你的_说明没读5遍没资格点.exe执行失败了，请多次尝试，如果多次尝试均失败说明你这个机器不兼容，请参考上面的情况二。<br> _点我一键刷黑.bat执行之后如果出现红字那么你执行_现在就刷黑.bat也会出现红字，这是正常的！红字就是刷不了，失败了，请参考上面的情况二。<br>如果执行_点我一键刷黑.bat或_现在就刷黑.bat之后，走进度百分比之后出现红字报错，一定不要关机！一定不要关机！一定不要关机！请重新执行一次，一次不行就两次，两次不行就三次，直到提示绿字操作成功！<br>这种情况贸然关机或重启一定会黑！这种情况贸然关机或重启一定会黑！这种情况贸然关机或重启一定会黑！<br>提示黄字“GbE Region does not exist.”是正常的，因为准系统的BIOS本来就没有“GbE Region”，忽略即可！</p>
-<h3 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h3><ul>
-<li><p>首先把安全软件卸了，防止捣乱</p>
+<p>作者提示：_点我一键刷黑.bat或_现在就刷黑.bat执行之后如果出现红字说明你的_说明没读5遍没资格点.exe执行失败了，请多次尝试，如果多次尝试均失败说明你这个机器不兼容，请参考上面的情况二。<br>
+_点我一键刷黑.bat执行之后如果出现红字那么你执行_现在就刷黑.bat也会出现红字，这是正常的！红字就是刷不了，失败了，请参考上面的情况二。<br>
+如果执行_点我一键刷黑.bat或_现在就刷黑.bat之后，走进度百分比之后出现红字报错，一定不要关机！一定不要关机！一定不要关机！请重新执行一次，一次不行就两次，两次不行就三次，直到提示绿字操作成功！<br>
+这种情况贸然关机或重启一定会黑！这种情况贸然关机或重启一定会黑！这种情况贸然关机或重启一定会黑！<br>
+提示黄字“GbE Region does not exist.”是正常的，因为准系统的BIOS本来就没有“GbE Region”，忽略即可！</p>
+<h3 id="准备">准备</h3>
+<ul>
+<li>
+<p>首先把安全软件卸了，防止捣乱</p>
 </li>
-<li><p>如果你用的是Win8/8.1/10的操作系统，请禁用休眠！禁用休眠！管理员身份命令行执行“<code>powercfg -h off</code>”</p>
+<li>
+<p>如果你用的是Win8/8.1/10的操作系统，请禁用休眠！禁用休眠！管理员身份命令行执行“<code>powercfg -h off</code>”</p>
 </li>
-<li><p>将U盘或者移动硬盘格式化为FAT32（只能是FAT32而且只能有一个分区），把EFI文件夹复制到U盘根目录！根目录！根目录！确保U盘打开就能看到EFI文件夹！</p>
+<li>
+<p>将U盘或者移动硬盘格式化为FAT32（只能是FAT32而且只能有一个分区），把EFI文件夹复制到U盘根目录！根目录！根目录！确保U盘打开就能看到EFI文件夹！</p>
 </li>
-<li><p>然后把你要刷的BIOS文件改名为BIOS.BIN（注意扩展名也要改，原来是ROM，现在改成BIN），放入EFI/BOOT文件夹内。</p>
+<li>
+<p>然后把你要刷的BIOS文件改名为BIOS.BIN（注意扩展名也要改，原来是ROM，现在改成BIN），放入EFI/BOOT文件夹内。</p>
 </li>
-<li><p>重启按F2进入BIOS，寻找下列选项并修改</p>
+<li>
+<p>重启按F2进入BIOS，寻找下列选项并修改</p>
 <ul>
 <li>BIOS主界面-&gt;顶部的Boot-&gt;UEFI Settings-&gt;UEFI Boot-&gt;Enabled</li>
 <li>BIOS主界面-&gt;顶部的Security-&gt;Secure Boot-&gt;Disabled</li>
 </ul>
 </li>
-<li><p>修改好之后，插入U盘，蓝天机型按F4，回车保存，这里会自动重启，我们需要再次进入BIOS，按F7进入启动设备的菜单，选中后按回车从你的U盘启动，进入 EFI Shell 命令行，提示符闪烁就证明准备工作做完了。</p>
-<h3 id="开刷"><a href="#开刷" class="headerlink" title="开刷"></a>开刷</h3></li>
-<li><p>1.输入G回车</p>
+<li>
+<p>修改好之后，插入U盘，蓝天机型按F4，回车保存，这里会自动重启，我们需要再次进入BIOS，按F7进入启动设备的菜单，选中后按回车从你的U盘启动，进入 EFI Shell 命令行，提示符闪烁就证明准备工作做完了。</p>
+<h3 id="开刷">开刷</h3>
+</li>
+<li>
+<p>1.输入G回车</p>
 </li>
 </ul>
 <blockquote>
-<p><strong>注意:</strong> 输入G回车之后会自动重启，如果没有自动重启说明你这个机器不兼容。<br>这次重启黑屏的时间会比较长，<code>我大约等了15s的样子</code>这时候风扇可能会满速运转，算是进入强冷模式了。<br>这是正常的！无需在意，操作完成后就会恢复，如果害怕你可以重启它也会自己恢复。<br>只要不是命令执行时的强制重启，都没有任何危险性！</p>
+<p><strong>注意:</strong> 输入G回车之后会自动重启，如果没有自动重启说明你这个机器不兼容。<br>
+这次重启黑屏的时间会比较长，<code>我大约等了15s的样子</code>这时候风扇可能会满速运转，算是进入强冷模式了。<br>
+这是正常的！无需在意，操作完成后就会恢复，如果害怕你可以重启它也会自己恢复。<br>
+只要不是命令执行时的强制重启，都没有任何危险性！</p>
 </blockquote>
 <ul>
-<li><p>继续按F7（蓝天），选择U盘启动，再来进入下一步操作</p>
-</li>
-<li><p>2.备份<br>A回车C回车</p>
-<p><img src="https://cdn.jsdelivr.net/gh/izyq/izyq.github.io@master/2021/01/23/bio/pasted-1.png" alt="奔跑博客"></p>
-</li>
-<li><p>3.刷入<br>D回车F回车</p>
-<p><img src="https://cdn.jsdelivr.net/gh/izyq/izyq.github.io@master/2021/01/23/bio/pasted-2.png" alt="奔跑博客"></p>
-</li>
+<li>继续按F7（蓝天），选择U盘启动，再来进入下一步操作</li>
+<li>2.备份<br>
+A回车C回车</li>
 </ul>
-<p>看到successfel就说明刷入成功了<br>接着按F回车，执行第四步</p>
+<p><img src="https://cdn.jsdelivr.net/gh/izyq/izyq.github.io@master/2021/01/23/bio/pasted-1.png" alt="" loading="lazy"></p>
 <ul>
-<li><p>4.直接拔掉AC电源给机器断电（这步很重要，如果不照做99%的人会刷黑）<br>然后装回硬盘、电池、插回AC电源开机，至此完成刷写过程</p>
-<p><img src="https://cdn.jsdelivr.net/gh/izyq/izyq.github.io@master/2021/01/23/bio/pasted-3.png" alt="奔跑博客"></p>
-</li>
+<li>3.刷入<br>
+D回车F回车</li>
 </ul>
+<p><img src="https://cdn.jsdelivr.net/gh/izyq/izyq.github.io@master/2021/01/23/bio/pasted-2.png" alt="" loading="lazy"></p>
+<p>看到successfel就说明刷入成功了<br>
+接着按F回车，执行第四步</p>
+<ul>
+<li>4.直接拔掉AC电源给机器断电（这步很重要，如果不照做99%的人会刷黑）<br>
+然后装回硬盘、电池、插回AC电源开机，至此完成刷写过程</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/izyq/izyq.github.io@master/2021/01/23/bio/pasted-3.png" alt="" loading="lazy"></p>
 
                 
             </div>

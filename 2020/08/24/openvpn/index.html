@@ -356,14 +356,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-06-06
+                    2023-06-07
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    559
+                    561
                 </div>
                 
 
@@ -393,27 +393,32 @@
 <li>由于我的电脑p775太重，学校某些地方端口封锁，而我又需要一个稳定的远程连接方式，于是开始折腾起自己家里的网件R6400。</li>
 </ul>
 </blockquote>
-<h1 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h1><p><strong>对于要向其分配静态IP地址的每个OpenVPN客户端，您需要从该特定客户端证书中提取通用名称。</strong></p>
+<h1>前期准备</h1>
+<p><strong>对于要向其分配静态IP地址的每个OpenVPN客户端，您需要从该特定客户端证书中提取通用名称。</strong></p>
 <p>我的路由器使用的是梅林固件，<code>Firmware:380.70_0-X7.9</code>，我在vpn配置好用户名和密码后发现每个连接的<em>common name</em>都是client，没法给每个用户名单独配置，我苦苦寻求方法无果后，偶然发现在高级设置里面开启这两项，用户名就成了common name</p>
-<p><img src="https://cdn.jsdelivr.net/gh/izyq/izyq.github.io@master/2021/01/23/openvp/pasted-1.png" alt="奔跑博客"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/izyq/izyq.github.io@master/2021/01/23/openvp/pasted-2.png" alt="奔跑博客"></p>
-<h1 id="为Open薇屁嗯客户端分配静态IP地址"><a href="#为Open薇屁嗯客户端分配静态IP地址" class="headerlink" title="为Open薇屁嗯客户端分配静态IP地址"></a>为Open薇屁嗯客户端分配静态IP地址</h1><h2 id="创建一个文件来存储静态IP地址"><a href="#创建一个文件来存储静态IP地址" class="headerlink" title="创建一个文件来存储静态IP地址"></a>创建一个文件来存储静态IP地址</h2><p>有了<code>common name</code>后，一切都变得好办起来。<br>使用 client-config-dir 选项，要求将分配给连接客户端的静态IP地址存储在OpenVPN服务器可以读取的文件中。<br>在R6400中，我们在高级设置 自定义配置中添加一行</p>
+<p><img src="https://cdn.jsdelivr.net/gh/izyq/izyq.github.io@master/2021/01/23/openvp/pasted-1.png" alt="" loading="lazy"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/izyq/izyq.github.io@master/2021/01/23/openvp/pasted-2.png" alt="" loading="lazy"></p>
+<h1>为Open薇屁嗯客户端分配静态IP地址</h1>
+<h2 id="创建一个文件来存储静态IP地址">创建一个文件来存储静态IP地址</h2>
+<p>有了<code>common name</code>后，一切都变得好办起来。<br>
+使用 client-config-dir 选项，要求将分配给连接客户端的静态IP地址存储在OpenVPN服务器可以读取的文件中。<br>
+在R6400中，我们在高级设置 自定义配置中添加一行</p>
 <pre class="line-numbers language-none"><code class="language-none">client-config-dir &#x2F;etc&#x2F;ccd #路径可以更改<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-
-<p><img src="https://cdn.jsdelivr.net/gh/izyq/izyq.github.io@master/2021/01/23/openvp/pasted-3.png" alt="奔跑博客"></p>
-<h2 id="为OpenVPN客户端分配静态IP地址"><a href="#为OpenVPN客户端分配静态IP地址" class="headerlink" title="为OpenVPN客户端分配静态IP地址"></a>为OpenVPN客户端分配静态IP地址</h2><p>有了客户端的通用名称后，您就可以使用 ifconfig-push 选项。<br>例如，给通用名称为<strong>ipad</strong>的客户端分配静态ip地址：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/izyq/izyq.github.io@master/2021/01/23/openvp/pasted-3.png" alt="" loading="lazy"></p>
+<h2 id="为OpenVPN客户端分配静态IP地址">为OpenVPN客户端分配静态IP地址</h2>
+<p>有了客户端的通用名称后，您就可以使用 ifconfig-push 选项。<br>
+例如，给通用名称为<strong>ipad</strong>的客户端分配静态ip地址：</p>
 <pre class="line-numbers language-none"><code class="language-none">mkdir &#x2F;etc&#x2F;ccd
 echo ifconfig-push 10.8.0.10 255.255.255.0 &gt; &#x2F;etc&#x2F;ccd&#x2F;gx8<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
 <p>然后输入用户名gx8和密码重新连接，open薇屁嗯就会分配你设定好的ip地址</p>
-<h2 id="不完美与瑕疵"><a href="#不完美与瑕疵" class="headerlink" title="不完美与瑕疵"></a>不完美与瑕疵</h2><p>R6400ssh连接用admin用户登陆没有root权限，而etc根目录的etc文件是tmp文件夹里的一个软链接，这意味着路由器每次重启你都需要重新创建这样一个文件，后面再去研究怎么解决这个问题吧！</p>
-<h1 id="补充-win10-open薇屁嗯-UI-的开机自动连接设置方法"><a href="#补充-win10-open薇屁嗯-UI-的开机自动连接设置方法" class="headerlink" title="补充 win10 open薇屁嗯 UI 的开机自动连接设置方法"></a>补充 win10 open薇屁嗯 UI 的开机自动连接设置方法</h1><p>如图所示，给openvpn的快捷方式目标里面加上这一句</p>
+<h2 id="不完美与瑕疵">不完美与瑕疵</h2>
+<p>R6400ssh连接用admin用户登陆没有root权限，而etc根目录的etc文件是tmp文件夹里的一个软链接，这意味着路由器每次重启你都需要重新创建这样一个文件，后面再去研究怎么解决这个问题吧！</p>
+<h1>补充 win10 open薇屁嗯 UI 的开机自动连接设置方法</h1>
+<p>如图所示，给openvpn的快捷方式目标里面加上这一句</p>
 <pre class="line-numbers language-none"><code class="language-none">--connect client1.ovpn 
 #clint1是你的配置文件名称，根据实际情况自行修改<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-
-<p><img src="https://cdn.jsdelivr.net/gh/izyq/izyq.github.io@master/2021/01/23/openvp/pasted-4.png" alt="奔跑博客"><br>然后按win+R ，输入<code>shell:startup</code>，把改好的快捷方式复制进去便大功告成啦</p>
+<p><img src="https://cdn.jsdelivr.net/gh/izyq/izyq.github.io@master/2021/01/23/openvp/pasted-4.png" alt="" loading="lazy"><br>
+然后按win+R ，输入<code>shell:startup</code>，把改好的快捷方式复制进去便大功告成啦</p>
 
                 
             </div>

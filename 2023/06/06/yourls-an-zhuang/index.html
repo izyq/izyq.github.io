@@ -356,14 +356,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-06-06
+                    2023-06-07
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    242
+                    245
                 </div>
                 
 
@@ -389,10 +389,15 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <blockquote>
-<p>本文主要是在官方的docker镜像基础上加上了composer和gd<br>并且将user目录挂载到宿主机上 更方便插件的安装</p>
+<p>本文主要是在官方的docker镜像基础上加上了composer和gd<br>
+并且将user目录挂载到宿主机上 更方便插件的安装</p>
 </blockquote>
-<p>docker hub<br><a target="_blank" rel="noopener" href="https://hub.docker.com/_/yourls/">yourls - Official Image | Docker Hub</a><br>如何安装更多 PHP 扩展<br><a target="_blank" rel="noopener" href="https://github.com/docker-library/docs/blob/master/php/README.md#how-to-install-more-php-extensions">docs/README.md at master · docker-library/docs · GitHub</a></p>
-<h3 id="编写Dockerfile-安装composer和gd"><a href="#编写Dockerfile-安装composer和gd" class="headerlink" title="编写Dockerfile  安装composer和gd"></a>编写Dockerfile  安装composer和gd</h3><pre class="line-numbers language-Dockerfile" data-language="Dockerfile"><code class="language-Dockerfile">FROM yourls:latest
+<p>docker hub<br>
+<a target="_blank" rel="noopener" href="https://hub.docker.com/_/yourls/">yourls - Official Image | Docker Hub</a><br>
+如何安装更多 PHP 扩展<br>
+<a target="_blank" rel="noopener" href="https://github.com/docker-library/docs/blob/master/php/README.md#how-to-install-more-php-extensions">docs/README.md at master · docker-library/docs · GitHub</a></p>
+<h3 id="编写Dockerfile-安装composer和gd">编写Dockerfile  安装composer和gd</h3>
+<pre class="line-numbers language-Dockerfile" data-language="Dockerfile"><code class="language-Dockerfile">FROM yourls:latest
 RUN apt-get update &amp;&amp; apt-get install -y \
 		libfreetype6-dev \
 		libjpeg62-turbo-dev \
@@ -401,10 +406,10 @@ RUN apt-get update &amp;&amp; apt-get install -y \
 	&amp;&amp; docker-php-ext-configure gd --with-freetype --with-jpeg \
 	&amp;&amp; docker-php-ext-install -j$(nproc) gd
 RUN curl -sS https:&#x2F;&#x2F;getcomposer.org&#x2F;installer | php -- --install-dir&#x3D;&#x2F;usr&#x2F;local&#x2F;bin --filename&#x3D;composer<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="构建镜像"><a href="#构建镜像" class="headerlink" title="构建镜像"></a>构建镜像</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">docker</span> build <span class="token parameter variable">-t</span> yourls <span class="token builtin class-name">.</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<h3 id="运行容器"><a href="#运行容器" class="headerlink" title="运行容器"></a>运行容器</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">docker</span> run <span class="token parameter variable">--name</span> yourls <span class="token punctuation">\</span>
+<h3 id="构建镜像">构建镜像</h3>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">docker</span> build <span class="token parameter variable">-t</span> yourls <span class="token builtin class-name">.</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="运行容器">运行容器</h3>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">docker</span> run <span class="token parameter variable">--name</span> yourls <span class="token punctuation">\</span>
    <span class="token parameter variable">-e</span> <span class="token assign-left variable">YOURLS_DB_HOST</span><span class="token operator">=</span>数据库地址 <span class="token punctuation">\</span>
    <span class="token parameter variable">-e</span> <span class="token assign-left variable">YOURLS_DB_USER</span><span class="token operator">=</span>数据库账号 <span class="token punctuation">\</span>
    <span class="token parameter variable">-e</span> <span class="token assign-left variable">YOURLS_DB_PASS</span><span class="token operator">=</span>数据库密码 <span class="token punctuation">\</span>
@@ -414,10 +419,8 @@ RUN curl -sS https:&#x2F;&#x2F;getcomposer.org&#x2F;installer | php -- --install
    <span class="token parameter variable">-p</span> <span class="token number">80</span>:80 <span class="token punctuation">\</span>
    <span class="token parameter variable">-v</span> /root/yourls:/var/www/html/user <span class="token punctuation">\</span>
    <span class="token parameter variable">-d</span> yourls<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-<h3 id="二维码插件"><a href="#二维码插件" class="headerlink" title="二维码插件"></a>二维码插件</h3><p><a target="_blank" rel="noopener" href="https://github.com/seandrickson/YOURLS-QRCode-Plugin">GitHub - seandrickson/YOURLS-QRCode-Plugin: YOURLS QR Code Plugin – allows you to get the QR code by simply clicking on a button in the Admin area (or by adding “.qr” to the end of the keyword.)</a></p>
+<h3 id="二维码插件">二维码插件</h3>
+<p><a target="_blank" rel="noopener" href="https://github.com/seandrickson/YOURLS-QRCode-Plugin">GitHub - seandrickson/YOURLS-QRCode-Plugin: YOURLS QR Code Plugin – allows you to get the QR code by simply clicking on a button in the Admin area (or by adding “.qr” to the end of the keyword.)</a></p>
 
                 
             </div>

@@ -364,14 +364,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-06-06
+                    2023-06-07
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    305
+                    306
                 </div>
                 
 
@@ -396,36 +396,34 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="群晖-为dsvideo目录添加自动索引"><a href="#群晖-为dsvideo目录添加自动索引" class="headerlink" title="群晖- 为dsvideo目录添加自动索引"></a>群晖- 为dsvideo目录添加自动索引</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">synoindex <span class="token parameter variable">-R</span> /volume2/video/Download<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<h2 id="linux-下后台运行python脚本"><a href="#linux-下后台运行python脚本" class="headerlink" title="linux 下后台运行python脚本"></a>linux 下后台运行python脚本</h2><h3 id="一、启动命令："><a href="#一、启动命令：" class="headerlink" title="一、启动命令："></a>一、启动命令：</h3><p>1、一般使用</p>
+                <h2 id="群晖-为dsvideo目录添加自动索引">群晖- 为dsvideo目录添加自动索引</h2>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">synoindex <span class="token parameter variable">-R</span> /volume2/video/Download<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="linux-下后台运行python脚本">linux 下后台运行python脚本</h2>
+<h3 id="一、启动命令：">一、启动命令：</h3>
+<p>1、一般使用</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">nohup</span> python <span class="token parameter variable">-u</span> Job.py <span class="token operator">></span> log.log <span class="token operator"><span class="token file-descriptor important">2</span>></span><span class="token file-descriptor important">&amp;1</span> <span class="token operator">&amp;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <p>2、只记录异常日志（推荐）</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># nohup python -u Job.py >/dev/null 2>error.log  2>&amp;1 &amp;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <p>3、不记录任何日志</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># nohup python -u Job.py >/dev/null  2>&amp;1 &amp;   </span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<h4 id="说明："><a href="#说明：" class="headerlink" title="说明："></a>说明：</h4><ol>
+<h4 id="说明：">说明：</h4>
+<ol>
 <li>末尾的“&amp;”：表示后台运行程序</li>
 <li>“nohup” ：保证程序不被挂起</li>
 <li>“python”：是执行python代码的命令</li>
 <li>“-u”：表示不启用缓存，实时输出打印信息到日志文件（如果不加-u，则会导致日志文件不会实时刷新代码中的print函数的信息）</li>
-<li>“Job.py”：是python的源代码文件</li>
+<li>“<a target="_blank" rel="noopener" href="http://Job.py">Job.py</a>”：是python的源代码文件</li>
 <li>“log.log”：是输出的日志文件</li>
 <li>“&gt;”：是指将打印信息指定到日志文件</li>
 <li>“2&gt;&amp;1”：将标准错误输出转变化标准输出，可以将错误信息也输出到日志文件中（0-&gt; stdin, 1-&gt;stdout, 2-&gt;stderr）</li>
 </ol>
-<h3 id="二、关闭命令"><a href="#二、关闭命令" class="headerlink" title="二、关闭命令"></a>二、关闭命令</h3><p>1、查看进程</p>
+<h3 id="二、关闭命令">二、关闭命令</h3>
+<p>1、查看进程</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># ps -ef|grep python</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <p>或者</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># ps -ef|grep Job</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <p>2、关闭进程</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># kill -9 19913</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <p>3、检查</p>
 <p>用1中查看进程的命令，检查或确认进程是否真正被关闭。</p>
 

@@ -360,7 +360,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-06-06
+                    2023-06-07
                 </div>
                 
 
@@ -392,15 +392,17 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>又到了选课的时间，又一次被教务系统的预选给安排了，硬是一门都没选中。于是想实现有没有自动捡课的方法。就整体分为两种方法，一种是获取get请求然后由python多线程提交去选课，一种是利用自动化测试的selenium库去调用谷歌浏览器模拟人工选课操作。其实就算都是强智系统，但细节上还是有些差别的。所以也有可能无法实现。这里放出两种方法的代码和流程，仅供参考。</p>
-<h2 id="方法一："><a href="#方法一：" class="headerlink" title="方法一："></a>方法一：</h2><p>直接提交选课的数据包（需要cookie和课程ID）,先用同学的账号登录教务系统，进入到选课的地方，打开浏览器的开发模式（按F12），点击Network(）我这里是谷歌浏览器，如果是其他的找到网络抓包即可。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/izyq/izyq.github.io@master/2021/01/23/qiang-k/pasted-0.png" alt="奔跑博客"></p>
+                <h2 id="前言">前言</h2>
+<p>又到了选课的时间，又一次被教务系统的预选给安排了，硬是一门都没选中。于是想实现有没有自动捡课的方法。就整体分为两种方法，一种是获取get请求然后由python多线程提交去选课，一种是利用自动化测试的selenium库去调用谷歌浏览器模拟人工选课操作。其实就算都是强智系统，但细节上还是有些差别的。所以也有可能无法实现。这里放出两种方法的代码和流程，仅供参考。</p>
+<h2 id="方法一：">方法一：</h2>
+<p>直接提交选课的数据包（需要cookie和课程ID）,先用同学的账号登录教务系统，进入到选课的地方，打开浏览器的开发模式（按F12），点击Network(）我这里是谷歌浏览器，如果是其他的找到网络抓包即可。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/izyq/izyq.github.io@master/2021/01/23/qiang-k/pasted-0.png" alt="" loading="lazy"></p>
 <p>点击你想选择课程的选课按钮，得到我们需要的数据包。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/izyq/izyq.github.io@master/2021/01/23/qiang-k/pasted-1.png" alt="奔跑博客"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/izyq/izyq.github.io@master/2021/01/23/qiang-k/pasted-1.png" alt="" loading="lazy"></p>
 <p>我们来看下这个数据包的内容，我们需要找到cookie( 你的身份标识），以及我们需要选的课程ID，然后用python模拟提交就OK了。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/izyq/izyq.github.io@master/2021/01/23/qiang-k/pasted-2.png" alt="奔跑博客"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/izyq/izyq.github.io@master/2021/01/23/qiang-k/pasted-2.png" alt="" loading="lazy"></p>
 <p>注意 代码里的User_Agent和Referer也要记得修改，都在数据包里。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/izyq/izyq.github.io@master/2021/01/23/qiang-k/pasted-3.png" alt="奔跑博客"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/izyq/izyq.github.io@master/2021/01/23/qiang-k/pasted-3.png" alt="" loading="lazy"></p>
 <p>下面是代码：</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> requests
 <span class="token keyword">from</span> future<span class="token punctuation">.</span>backports<span class="token punctuation">.</span>test<span class="token punctuation">.</span>ssl_servers <span class="token keyword">import</span> threading
@@ -480,9 +482,10 @@
  
  
 main<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="方法二：selenium库模拟人工选课"><a href="#方法二：selenium库模拟人工选课" class="headerlink" title="方法二：selenium库模拟人工选课"></a>方法二：selenium库模拟人工选课</h2><p>要使用这个方法之前，最好先看一下这一篇文章，<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_43314519/article/details/107092245">了解如何使用selenium库</a>。记得提前安装好selenium库，以及Chromedriver。具体方法可以在csdn搜索。</p>
-<h3 id="使用流程"><a href="#使用流程" class="headerlink" title="使用流程"></a>使用流程</h3><ol>
+<h2 id="方法二：selenium库模拟人工选课">方法二：selenium库模拟人工选课</h2>
+<p>要使用这个方法之前，最好先看一下这一篇文章，<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_43314519/article/details/107092245">了解如何使用selenium库</a>。记得提前安装好selenium库，以及Chromedriver。具体方法可以在csdn搜索。</p>
+<h3 id="使用流程">使用流程</h3>
+<ol>
 <li>将脚本内信息填好改好</li>
 <li>运行脚本，此时会打开chrome并且打开登录页，脚本会自行填写学号密码，需要等你填写验证码</li>
 </ol>
