@@ -435,7 +435,8 @@
 1）.gitignore只能忽略那些原来没有被track的文件，如果某些文件已经被纳入了版本管理中，则修改.gitignore是无效的。<br>
 2）想要.gitignore起作用，必须要在这些文件不在暂存区中才可以，.gitignore文件只是忽略没有被staged(cached)文件，  对于已经被staged文件，加入ignore文件时一定要先从staged移除，才可以忽略。</p>
 </blockquote>
-<h5 id="解决方案：先把本地缓存删除，然后再进行git的提交">解决方案：先把本地缓存删除，然后再进行git的提交</h5>
+<h5 id="解决方案">解决方案</h5>
+<p>先把本地缓存删除，然后再进行git的提交</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> <span class="token function">rm</span> <span class="token parameter variable">-r</span> <span class="token parameter variable">--cached</span> <span class="token builtin class-name">.</span>
 <span class="token function">git</span> <span class="token function">add</span> <span class="token builtin class-name">.</span>
 <span class="token function">git</span> commit <span class="token parameter variable">-m</span> <span class="token string">'update .gitignore'</span>
