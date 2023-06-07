@@ -363,7 +363,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    218
+                    389
                 </div>
                 
 
@@ -399,6 +399,7 @@
 <ol start="5" class="contains-task-list">
 <li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"> 编排目录 自动生成 tag categories</li>
 <li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"> obsidian 使用插件上传图片时取消插入image name</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"> 🔗hexo生成永久文章链接</li>
 </ol>
 <h3 id="怎么做的">怎么做的</h3>
 <h5 id="1-自定义Project页面">1. 自定义Project页面</h5>
@@ -415,6 +416,7 @@
 <li><code>Ctrl+Shift+I</code></li>
 </ul>
 </li>
+<li>显示标题级别</li>
 </ul>
 <h5 id="5-自动生成-tag-categories">5.自动生成 tag categories</h5>
 <pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token comment"># Generate categories from directory-tree</span>
@@ -424,6 +426,11 @@
 <span class="token key atrule">auto_category</span><span class="token punctuation">:</span>
  <span class="token key atrule">enable</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
  <span class="token key atrule">depth</span><span class="token punctuation">:</span> <span class="token number">2</span> <span class="token comment">#目录深度</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="7-🔗文章永久链接">7.🔗文章永久链接</h5>
+<p>使用abbrlink生成，但是其原理是直接修改md文件，只要md文件存在abbrlink，这个md文件的abbrlink就不会改变，这个过程是在hexo generate的过程中生成的，我的写作方案<code>obsidian + hexo + git +CI/CD</code>建了三个仓库，post、hexo-baken、<a target="_blank" rel="noopener" href="http://izyq.github.io">izyq.github.io</a>，我的文章是提交到post，<a target="_blank" rel="noopener" href="http://xn--izyq-k84fx5t8q1j.github.io">一路到izyq.github.io</a>，abbrlink是在hexo-baken触发时生成的，显然这样的工作流不适合往后保存生成带abbrlink的md文件，所以只能在obsidian生成。<br>
+方案：<br>
+在obsidian中abbrlink使用YYYYMMDDhhmmss这样的时间格式，在模版中修改</p>
+
                 
             </div>
             <hr/>
@@ -994,8 +1001,16 @@
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            周master
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                    学习
+                                </a>
+                            
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0/git/" class="post-category">
+                                    git
+                                </a>
+                            
                             
                         </span>
                     </div>
@@ -1152,7 +1167,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">18.3k</span>&nbsp;字
+                class="white-color">18.5k</span>&nbsp;字
             
             
             
