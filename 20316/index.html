@@ -1065,11 +1065,11 @@ select substr((select database()),1,3)&#x3D; ‘sec’; -- 匹配前三个个字
 
 <!-- TOC 悬浮按钮. -->
 
-<div id="floating-toc-btn" class="hide-on-med-and-down">
-    <a class="btn-floating btn-large bg-color">
-        <i class="fas fa-list-ul"></i>
-    </a>
-</div>
+    <div id="floating-toc-btn" class="hide-on-med-and-down">
+        <a class="btn-floating btn-large bg-color">
+            <i class="fas fa-list-ul"></i>
+        </a>
+    </div>
 
 
 <script src="https://cdn.jsdelivr.net/gh/izyq/izyq.github.io@gh-pages/libs/tocbot/tocbot.min.js"></script>
@@ -1079,21 +1079,8 @@ select substr((select database()),1,3)&#x3D; ‘sec’; -- 匹配前三个个字
             tocSelector: '#toc-content',
             contentSelector: '#articleContent',
             headingsOffset: -($(window).height() * 0.4 - 45),
-            collapseDepth: Number('0'),
-            headingSelector: 'h2, h3, h4'
-        });
-
-        // modify the toc link href to support Chinese.
-        let i = 0;
-        let tocHeading = 'toc-heading-';
-        $('#toc-content a').each(function () {
-            $(this).attr('href', '#' + tocHeading + (++i));
-        });
-
-        // modify the heading title id to support Chinese.
-        i = 0;
-        $('#articleContent').children('h2, h3, h4').each(function () {
-            $(this).attr('id', tocHeading + (++i));
+            collapseDepth: Number('2'),
+            headingSelector: 'h2, h3, h4, h5, h6, h7'
         });
 
         // Set scroll toc fixed.
