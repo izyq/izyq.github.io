@@ -363,14 +363,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    402
+                    536
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
 
@@ -390,16 +390,16 @@
             <div id="articleContent">
                 <h3 id="我做了什么">我做了什么</h3>
 <ul class="contains-task-list">
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"> 1. 自定义Project页面 实现项目展示</li>
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"> 2. yourls 短链接服务 和 Plausible + utm 统计网站流量 <strong>跟踪访问来源</strong></li>
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"> 3. hexo 创作流程大改造 使用obsidian + hexo + git +CI/CD</li>
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"> 4. hexo 支持 TaskList</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> 1. 自定义Project页面 实现项目展示</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> 2. yourls 短链接服务 和 Plausible + utm 统计网站流量 <strong>跟踪访问来源</strong></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> 3. hexo 创作流程大改造 使用obsidian + hexo + git +CI/CD</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> 4. hexo 支持 TaskList</li>
 </ul>
 <h3 id="还要做啥">还要做啥</h3>
 <ul class="contains-task-list">
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"> 5. 编排目录 自动生成 tag categories</li>
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"> 6. obsidian 使用插件上传图片时取消插入image name</li>
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"> 7. hexo生成永久文章链接🔗</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> 5. 编排目录 自动生成 tag categories</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> 6. obsidian 使用插件上传图片时取消插入image name</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> 7. hexo生成永久文章链接🔗</li>
 </ul>
 <h3 id="怎么做的">怎么做的</h3>
 <h4 id="1-自定义Project页面">1. 自定义Project页面</h4>
@@ -416,8 +416,21 @@
 <li><code>Ctrl+Shift+I</code></li>
 </ul>
 </li>
-<li>显示标题级别</li>
+<li>显示标题级别
+<ul>
+<li>安装插件lapel</li>
 </ul>
+</li>
+</ul>
+<h4 id="4-hexo-支持-TaskList">4. hexo 支持 TaskList</h4>
+<blockquote>
+<p>这个还是踩坑了<br>
+hexo-renderer-marked 改为 hexo-renderer-markdown-it 后<br>
+安装了 markdown-it-task-lists<br>
+还是不管用</p>
+</blockquote>
+<h5 id="解决方案">解决方案</h5>
+<p>发现是我的主题引用的<code>materializecss</code> css文件把checkbox的opacity设置为了0，删除该属性后才生效。</p>
 <h4 id="5-自动生成-tag-categories">5.自动生成 tag categories</h4>
 <pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token comment"># Generate categories from directory-tree</span>
 <span class="token comment"># Dependencies: https://github.com/xu-song/hexo-auto-category</span>
@@ -426,6 +439,8 @@
 <span class="token key atrule">auto_category</span><span class="token punctuation">:</span>
  <span class="token key atrule">enable</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
  <span class="token key atrule">depth</span><span class="token punctuation">:</span> <span class="token number">2</span> <span class="token comment">#目录深度</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="6-obsidian-使用插件上传图片时取消插入图片名">6.obsidian 使用插件上传图片时取消插入图片名</h4>
+<p>看了一下image auto upload Plugin插件的JS代码，发现image name的相关代码，对最后插入md文件时进行了拼接，修改相应代码即可</p>
 <h4 id="7-🔗文章永久链接">7.🔗文章永久链接</h4>
 <p>使用abbrlink生成，但是其原理是直接修改md文件，只要md文件存在abbrlink，这个md文件的abbrlink就不会改变，这个过程是在hexo generate的过程中生成的，我的写作方案<code>obsidian + hexo + git +CI/CD</code>建了三个仓库，<code>post</code>、<code>hexo-baken</code>、<code>izyq.github.io</code>，我的文章是提交到<code>post</code>仓库，然后随着workflows一路到<code>izyq.github.io</code>，abbrlink是在hexo-baken触发时生成的，显然这样的工作流不适合往后保存生成带abbrlink的md文件，所以只能在obsidian生成。</p>
 <h5 id="方案">方案</h5>
@@ -1154,7 +1169,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">18.5k</span>&nbsp;字
+                class="white-color">18.7k</span>&nbsp;字
             
             
             
