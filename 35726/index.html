@@ -356,14 +356,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-06-07
+                    2023-06-08
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    395
+                    402
                 </div>
                 
 
@@ -389,29 +389,29 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h3 id="我做了什么">我做了什么</h3>
-<ol class="contains-task-list">
-<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> 自定义Project页面 实现项目展示</li>
-<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> yourls 短链接服务 和 Plausible + utm 统计网站流量 <strong>跟踪访问来源</strong></li>
-<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> hexo 创作流程大改造 使用obsidian + hexo + git +CI/CD</li>
-<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> hexo 支持 TaskList</li>
-</ol>
+<ul class="contains-task-list">
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"> 1. 自定义Project页面 实现项目展示</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"> 2. yourls 短链接服务 和 Plausible + utm 统计网站流量 <strong>跟踪访问来源</strong></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"> 3. hexo 创作流程大改造 使用obsidian + hexo + git +CI/CD</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"> 4. hexo 支持 TaskList</li>
+</ul>
 <h3 id="还要做啥">还要做啥</h3>
-<ol start="5" class="contains-task-list">
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"> 编排目录 自动生成 tag categories</li>
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"> obsidian 使用插件上传图片时取消插入image name</li>
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"> hexo生成永久文章🔗链接</li>
-</ol>
+<ul class="contains-task-list">
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"> 5. 编排目录 自动生成 tag categories</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"> 6. obsidian 使用插件上传图片时取消插入image name</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"> 7. hexo生成永久文章链接🔗</li>
+</ul>
 <h3 id="怎么做的">怎么做的</h3>
 <h4 id="1-自定义Project页面">1. 自定义Project页面</h4>
 <p>修改hexo主题对应的ejs文件，利用自带的categories模块，判断category是否等于Project，再对Project渲染生成不同的html界面。</p>
 <h4 id="3-obsidian写作">3.obsidian写作</h4>
 <ul>
-<li>🧐git插件使用
+<li>🧐 git插件使用
 <ul>
 <li>快捷键<code>Ctrl + P</code>打开命令面板，输入<code>open source control view</code>启用可视化操作面板：</li>
 </ul>
 </li>
-<li>🔧obsidian调试
+<li>🔧 obsidian调试
 <ul>
 <li><code>Ctrl+Shift+I</code></li>
 </ul>
@@ -428,7 +428,7 @@
  <span class="token key atrule">depth</span><span class="token punctuation">:</span> <span class="token number">2</span> <span class="token comment">#目录深度</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="7-🔗文章永久链接">7.🔗文章永久链接</h4>
 <p>使用abbrlink生成，但是其原理是直接修改md文件，只要md文件存在abbrlink，这个md文件的abbrlink就不会改变，这个过程是在hexo generate的过程中生成的，我的写作方案<code>obsidian + hexo + git +CI/CD</code>建了三个仓库，<code>post</code>、<code>hexo-baken</code>、<code>izyq.github.io</code>，我的文章是提交到<code>post</code>仓库，然后随着workflows一路到<code>izyq.github.io</code>，abbrlink是在hexo-baken触发时生成的，显然这样的工作流不适合往后保存生成带abbrlink的md文件，所以只能在obsidian生成。</p>
-<h5 id="方案：">方案：</h5>
+<h5 id="方案">方案</h5>
 <p>在obsidian中abbrlink使用YYYYMMDDhhmmss这样的时间格式，在模版中修改</p>
 
                 
