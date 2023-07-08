@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>Idea Maven 导入项目过慢</title>
+      <link href="/20230612112332/"/>
+      <url>/20230612112332/</url>
+      
+        <content type="html"><![CDATA[<h3 id="Xms1024m-Xmx2048m">-Xms1024m -Xmx2048m</h3><p>打开Settings</p><p>修改maven Importing的jvm参数, 默认为700多, 直接修改成 -Xms1024m -Xmx2048m</p><p><img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master//20230612112600.png" alt="" loading="lazy"></p><h3 id="archetypeCatalog-internal">archetypeCatalog = internal</h3><blockquote><p>-DarchetypeCatalog参数是用来指定archetype-catalog.xml文件从哪里获取的。可以选择的值为：remote，internal ，local等，如果不进行设置的话则默认使用remote，而由于远程的中央仓库的archetype太多， 导致从远程网络加载所以非常慢，这也是之前卡在这里的原因。<br>settings设置的是当前项目的配置，如果设置全局的设置，则在other settings进行上述设置，则对其他项目也生效。</p></blockquote><p><img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master//20230612112632.png" alt="" loading="lazy"></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> maven </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>yourls安装</title>
       <link href="/33621/"/>
       <url>/33621/</url>
