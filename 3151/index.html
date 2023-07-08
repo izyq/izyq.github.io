@@ -360,21 +360,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-06-08
+                    2023-07-08
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    575
+                    1.3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    5 分
                 </div>
                 
 
@@ -444,6 +444,74 @@
 <p><strong>第二种方法（未测试）</strong></p>
 <p>手动设置不要检查特定文件的更改情况。</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> update-index --assume-unchanged <span class="token environment constant">PATH</span> //在<span class="token environment constant">PATH</span>处输入要忽略的文件<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h4 id="Git中CRLF与LF的转换">Git中CRLF与LF的转换</h4>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://git-scm.com/docs/gitattributes">Git - gitattributes Documentation</a></p>
+</blockquote>
+<h5 id="通过Git的全局配置进行修改">通过Git的全局配置进行修改</h5>
+<p><em>此种方式修改的是自己电脑的git的全局配置</em></p>
+<ul>
+<li>设置autoclf属性</li>
+</ul>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">// 提交时转换为LF，检出时转换为CRLF
+<span class="token function">git</span> config <span class="token parameter variable">--global</span> core.autocrlf <span class="token boolean">true</span>   
+
+// 提交时转换为LF，检出时不转换
+<span class="token function">git</span> config <span class="token parameter variable">--global</span> core.autocrlf input   
+
+// 提交检出均不转换
+<span class="token function">git</span> config <span class="token parameter variable">--global</span> core.autocrlf <span class="token boolean">false</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>开启safecrlf检查</li>
+</ul>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">// 拒绝提交包含混合换行符的文件 （一般设置为true）
+<span class="token function">git</span> config <span class="token parameter variable">--global</span> core.safecrlf <span class="token boolean">true</span>   
+
+// 允许提交包含混合换行符的文件
+<span class="token function">git</span> config <span class="token parameter variable">--global</span> core.safecrlf <span class="token boolean">false</span>   
+
+// 提交包含混合换行符的文件时给出警告
+<span class="token function">git</span> config <span class="token parameter variable">--global</span> core.safecrlf warn
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="通过-gitattributes进行修改（更推荐）">通过.gitattributes进行修改（更推荐）</h5>
+<blockquote>
+<p>.gitattributes是针对一个单一的仓库的，也就是说每一个代码仓库都可以包含一个.gitattributes文件。这种方式设置之后，不需要一个项目组里面的同事分别再去修改自己电脑的git的全局配置。</p>
+</blockquote>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">
+<span class="token number">1</span>. <span class="token assign-left variable">text</span><span class="token operator">=</span>auto：采用git认为最好的方式来处理文件，未在.gitattributes中
+ 设置的项默认按照这种方式处理；（If Git decides that the content
+ is text, its line endings are converted to LF on checkin.
+ When the <span class="token function">file</span> has been committed with CRLF, no conversion 
+ is done.）git发现是文本文件,那么在checkin的时候，会将文件结尾符转
+ 换为LF。果文件已经被已CRLF的形式提交（就是说已经在Gti仓库中的文件，如
+ 果结束符是CRLF，不会有任何的转换），不会有任何转换。
+ 
+ <span class="token number">2</span>. <span class="token parameter variable">-text</span> 表示让git在checkin以及checkout的时候，对end-of-line不
+ 做任何转换。
+ 
+ <span class="token number">3</span>. text 表示在checkin的时候会被转换为LF（在repository中的文件结束
+ 符是LF），如果需要控制在checkout的时候的换行符，需要结合eol进行设置
+ （也就是  控制working tree中的文件的结尾符，需要通过eol设置）。 
+ <span class="token assign-left variable">text</span><span class="token operator">=</span>auto和text的区别在于，text<span class="token operator">=</span>auto由git来确定是不是文本文件，
+ 从而进行转换；而text表示，你确定这个path就是文本文件，会直接对这个
+ path进行转换，而不是有git来decides是否转换。
+ 
+ <span class="token number">4</span>. 如果没有指定text，git会使用全局配置中的core.autocrlf来进行eol
+ 的转换。core.autocrlf需要自己在自己的电脑上进行配置。
+
+ <span class="token number">5</span>. <span class="token assign-left variable">eol</span><span class="token operator">=</span>crlf：对左边匹配的文件统一使用CRLF换行符格式，如果有文件中出现LF将会转换成CRLF<span class="token punctuation">;</span>也就是说，在checkin和checkout的时候，文件中都是CRLF，
+LF会被转换为CRLF。
+
+ <span class="token number">7</span>. <span class="token assign-left variable">eol</span><span class="token operator">=</span>lf：对左边匹配的文件统一使用LF换行符格式，如果有文件中出现CRLF将会转换成LF<span class="token punctuation">;</span>也就是说，在checkin和checkout的时候，文件中都是LF，
+CRLF会被转换为LF。
+
+ <span class="token number">8</span>. binary: 告诉git该文件为二进制，防止git修改该文件。git不会对对其中的换行符进行改变。
+
+注意：.gitattributes文件必须要提交之后才能生效。
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
                 
             </div>
             <hr/>
@@ -1163,7 +1231,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">18.7k</span>&nbsp;字
+                class="white-color">19.4k</span>&nbsp;字
             
             
             
