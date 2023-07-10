@@ -81,6 +81,35 @@
     
     
     <entry>
+      <title>全国双碳数据可视化</title>
+      <link href="/20221218023819/"/>
+      <url>/20221218023819/</url>
+      
+        <content type="html"><![CDATA[<h2 id="项目背景">项目背景</h2><p>本作品依托数字化可视平台模式，在“聚力碳中和，实现碳达峰”的双碳战略下，运用大数据、可视化等技术将数字化和双碳有序结合，多方位、多角度、全景展现不同地域、不同时间、多种联系的碳排放情况及各种指标，利用监控大屏直观监控数据变化。</p><h2 id="项目展示">项目展示</h2><p><img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master//202307101501460.png" alt="" loading="lazy"></p><p><img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master//202307101508868.png" alt="" loading="lazy"><br><img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master//202307101509038.png" alt="" loading="lazy"></p><h3 id="全国碳排放地图">全国碳排放地图</h3><blockquote><p>以地图+时间轴形式区分我国不同时间、不同地区碳排放总量情况，并根据排放量级差异化显示。同时支持<strong>地图下钻功能</strong>，点击地图里的相应省份，即可查看各省下辖市的详细排放数据。</p></blockquote><p><img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master//202307101502976.png" alt="" loading="lazy"></p><h3 id="能源消费比重">能源消费比重</h3><blockquote><p>统计我国航空业、交通运输、工业生产、政府部门、房地产业等我国几大重点碳排领域相关数据，以饼图形式动态呈现，可以选择不同领域查看其占比及详细碳排情况。（展示加入工业生产结果）</p></blockquote><p><img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master//202307101505031.png" alt="" loading="lazy"></p><h2 id="方案设计">方案设计</h2><h3 id="整体架构">整体架构</h3><p><img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master//202307101446974.png" alt="" loading="lazy"></p><h2 id="数据处理">数据处理</h2><h4 id="1-导入数据及描述统计">1. 导入数据及描述统计</h4><p>利用pandas库将网站获取到的各类数据读入，并对数据结构、有效性进行分析，为下一步数据清洗做准备。</p><h4 id="2-数据清洗">2. 数据清洗</h4><p>利用numpy、pandas库提供的函数及正则表达式等方法对文件中缺失的数据滤除、填充；对重复数据移除或转换；将现有数据计算清洗获得未提供的数据。</p><h4 id="3-绘图和可视化">3. 绘图和可视化</h4><p>利用matplotlib、pyecharts库,选择合适的表现形式，将处理好的数据以可视化形式展现出来。</p><h3 id="模块划分">模块划分</h3><p><img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master//202307101441827.png" alt="" loading="lazy"></p><h2 id="数据来源">数据来源</h2><h3 id="font-color-4f81bd-中国碳核算数据库-font"><font color="#4f81bd">中国碳核算数据库</font></h3><blockquote><p>提供中国及全球其他发展中经济体多尺度能源、排放及社会经济清单。</p></blockquote><p>链接🔗：<a href="https://www.ceads.net.cn/">CEADs 中国碳核算数据库</a></p><h3 id="font-color-4f81bd-和鲸社区碳排放数据集-font"><font color="#4f81bd">和鲸社区碳排放数据集</font></h3><blockquote><p>提供世界各国、中国个省份碳排放量、碳交易数据</p></blockquote><p>链接🔗：<a href="https://www.heywhale.com/home/dataset">数据集 - Heywhale.com</a></p><h3 id="font-color-4f81bd-全球实时碳数据-font"><font color="#4f81bd">全球实时碳数据</font></h3><blockquote><p>Carbon Monitor 是一个随时更新的实时数据集，碳监测数据通过公平使用开放数据政策免费提供给公众。</p></blockquote><p>链接🔗：<a href="https://carbonmonitor.org.cn/">全球实时碳数据 Carbon Monitor</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Python </category>
+          
+          <category> Project </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Python </tag>
+            
+            <tag> 数据可视化 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Git学习</title>
       <link href="/3151/"/>
       <url>/3151/</url>
