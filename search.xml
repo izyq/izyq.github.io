@@ -210,6 +210,35 @@
     
     
     <entry>
+      <title>校园公告提醒</title>
+      <link href="/20230710014120/"/>
+      <url>/20230710014120/</url>
+      
+        <content type="html"><![CDATA[<h2 id="项目背景">项目背景</h2><p>由于学校各种通知、竞赛繁多，相关事宜在不同部门发布，同学们总是错过一些重要的通 知，为了提高获取学校通知的效率，面向中国石油大学（北京）的同学们开发了此软件。此软件主要功能为爬取学校教务处，石油学院，工学院，文理学院，就业创业，共青团的通知并发送邮件到指定邮箱地址。</p><h2 id="概要设计">概要设计</h2><p><img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master//202307101343869.png" alt="" loading="lazy"></p><p>采用模块化编程，在<code>main.py</code>中import4个模块，各个模块分别承担相应的功能。</p><p><code>configs.py</code>储存各类配置，方便调用和统一修改</p><p><code>spider.py</code>爬虫主要配置，主要承担数据的提取，分组，写入，检查数据有无更新并返回状态码</p><p><code>send.py</code>    发送邮件模块，使用smtplib库发送html邮件</p><p><code>tool.py</code>  创建目录、文件，日志的写入，获取系统时间的集成，方便在其余模块调用</p><h2 id="运行截图">运行截图</h2><blockquote><p>后面部署到了Linux服务器上，详见：<br><a href="https://blog.izyq.cn/9039/">CUPNotice部署到Linux上 | 奔跑</a></p></blockquote><p><img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master//202307101345160.png" alt="" loading="lazy"></p><h2 id="效果展示">效果展示</h2><p><img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master//present1.png" alt="" loading="lazy"><br><img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master//present2.png" alt="" loading="lazy"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Python </category>
+          
+          <category> Project </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Python </tag>
+            
+            <tag> 爬虫 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>爱快 软路由 群晖 All in one 主机折腾日记</title>
       <link href="/53797/"/>
       <url>/53797/</url>
@@ -518,7 +547,7 @@
     
     
     <entry>
-      <title>CUPKNotice部署到Linux上</title>
+      <title>CUPNotice部署到Linux上</title>
       <link href="/9039/"/>
       <url>/9039/</url>
       
