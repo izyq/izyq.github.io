@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="杂记, 奔跑">
+    <meta name="keywords" content="注水井综合评价系统, 奔跑">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>杂记 | 奔跑</title>
+    <title>注水井综合评价系统 | 奔跑</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -208,7 +208,7 @@
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">杂记</h1>
+                    <h1 class="description center-align post-title">注水井综合评价系统</h1>
                 </div>
             </div>
         </div>
@@ -324,16 +324,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Linux/">
-                                <span class="chip bg-color">Linux</span>
-                            </a>
-                        
-                            <a href="/tags/Python/">
-                                <span class="chip bg-color">Python</span>
-                            </a>
-                        
-                            <a href="/tags/%E7%BE%A4%E6%99%96/">
-                                <span class="chip bg-color">群晖</span>
+                            <a href="/tags/Java/">
+                                <span class="chip bg-color">Java</span>
                             </a>
                         
                     </div>
@@ -344,8 +336,12 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Others/" class="post-category">
-                                Others
+                            <a href="/categories/Java/" class="post-category">
+                                Java
+                            </a>
+                        
+                            <a href="/categories/Project/" class="post-category">
+                                Project
                             </a>
                         
                     </div>
@@ -357,28 +353,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-10-15
+                    2023-07-20
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-10-15
+                    2023-07-20
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    306
+                    2.9k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    11 分
                 </div>
                 
 
@@ -396,36 +392,218 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="群晖-为dsvideo目录添加自动索引">群晖- 为dsvideo目录添加自动索引</h2>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">synoindex <span class="token parameter variable">-R</span> /volume2/video/Download<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h2 id="linux-下后台运行python脚本">linux 下后台运行python脚本</h2>
-<h3 id="一、启动命令：">一、启动命令：</h3>
-<p>1、一般使用</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">nohup</span> python <span class="token parameter variable">-u</span> Job.py <span class="token operator">></span> log.log <span class="token operator"><span class="token file-descriptor important">2</span>></span><span class="token file-descriptor important">&amp;1</span> <span class="token operator">&amp;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>2、只记录异常日志（推荐）</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># nohup python -u Job.py >/dev/null 2>error.log  2>&amp;1 &amp;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>3、不记录任何日志</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># nohup python -u Job.py >/dev/null  2>&amp;1 &amp;   </span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h4 id="说明：">说明：</h4>
+                <blockquote>
+<p>项目后端<a href="/20230720093159">脱敏</a>后已在Github Public<br>
+<a target="_blank" rel="noopener" href="https://github.com/izyq/flooding">GitHub - izyq/flooding: 油田注水综合评价系统</a></p>
+</blockquote>
+<h2 id="总体架构">总体架构</h2>
+<p><img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master//202307202034696.png" alt="" loading="lazy"></p>
+<h2 id="网络结构">网络结构</h2>
+<p><img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master//202307202035063.png" alt="" loading="lazy"></p>
+<h2 id="个人总结">个人总结</h2>
+<p>从最开始的需求分析、系统设计数据库设计，再到后端架构和代码的编写，每个环节我让我学习到了新的知识。方向比速度更重要，我认识到前期的调研和需求分析的至关重要，如果不把业务理解透彻，那么写再多的代码都是在做无用功。之前我对微服务只是浅尝辄止，但是通过该项目，我对微服务的架构、意义有了更加深入的理解，我想在此谈谈我的认识。</p>
+<p>在本项目中，整合了Spring Security、Spring Gateway、Spring Cloud、Dubbo以及加上nacos注册中心这样的微服务生态，通过对这些模块的整合我更加理解他们之间是如何协同运作的，首先网关是是服务的第一入口，在它上面做的事情很多。我们在网关配置好的相关路由后，比如对于网关识别到/api后缀，会对请求进行转发，向相关服务发出请求。在这里，我还将spring-cloud-starter-loadbalancer整合进了网关层，网关在收到请求后，会向nacos注册中心获取所有健康的集群的实例，并对向他们发出的请求实施负载均衡。当然，网关在向服务层发起请求之前，还有一件重要的事情，就是对用户发出的请求进行统一鉴权，通过解析JWT的token，获取到请求用户的信息和对应的权限信息，如果权限不足则直接返回，权限满足的情况下，又如何让业务层知道该请求是由哪个用户发出的呢，本项目中我们将在网关层通过token解析出来的用户信息再打到向业务层转发的请求的header上，业务层通过对http request header的读取，解析出用户相关信息，并对用户进行的操作进行记录。除此之外，网关在返回业务层数据的时候，也可以进行处理，对不符合统一响应的返回数据进行包装，对异常信息做同一处理。所以其实讲网关说成是一个过滤器链执行框架也不为过。</p>
+<p>接下来再说一下动态配置，像网关这种服务，作为所有请求的入口，必须保持高可用性。那么如果有新业务上线，需要添加新的路由，或者需要修改已有的路由时，每次都要重启网关服务吗？答案是否定的，这时候又是nacos发挥作用的时候了，nacos可以对各个服务进行动态配置，在需要进行动态配置的服务引入spring-cloud-starter-alibaba-nacos-config依赖，再对nacos连接进行相关配置即可生效。当我们需要对网关加入一条新的路由时，只需在nacos中修改配置并发布，服务端监听到配置变更，便会加载变更。</p>
+<h2 id="项目介绍">项目介绍</h2>
+<p>注水井开发效果综合评价系统软件是用于评估注水井在油田开发中的效果的工具。它结合了数据分析、模型计算和可视化展示等技术，通过对注水井运行数据的处理和分析，提供全面、准确的评价结果，帮助油田管理者和工程师做出科学决策。</p>
+<p><strong>以下是该系统软件的实现技术和特点：</strong></p>
 <ol>
-<li>末尾的“&amp;”：表示后台运行程序</li>
-<li>“nohup” ：保证程序不被挂起</li>
-<li>“python”：是执行python代码的命令</li>
-<li>“-u”：表示不启用缓存，实时输出打印信息到日志文件（如果不加-u，则会导致日志文件不会实时刷新代码中的print函数的信息）</li>
-<li>“<a target="_blank" rel="noopener" href="http://Job.py">Job.py</a>”：是python的源代码文件</li>
-<li>“log.log”：是输出的日志文件</li>
-<li>“&gt;”：是指将打印信息指定到日志文件</li>
-<li>“2&gt;&amp;1”：将标准错误输出转变化标准输出，可以将错误信息也输出到日志文件中（0-&gt; stdin, 1-&gt;stdout, 2-&gt;stderr）</li>
+<li>数据采集与处理：系统软件通过与注水井监测设备的连接，实时采集注水井的运行数据，包括注水压力、注水流量、注入液体的成分等。同时，对采集到的数据进行预处理，包括数据清洗、异常值处理和数据归一化等，确保数据的准确性和可靠性。</li>
+<li>模型建立与计算：系统软件基于油田注水井的工程原理和流体力学模型，建立评价模型。通过对采集到的数据进行模型计算，评估注水井的效果。常用的模型包括注入水体的扩散模型、压裂模型、地层渗流模型等。根据实际情况和需求，可以采用不同的模型进行评价，并结合多种模型结果进行综合分析。</li>
+<li>数据分析与可视化展示：系统软件通过数据分析算法，对模型计算结果进行综合分析，提取关键指标和特征。同时，采用图表、曲线和地图等可视化手段，将评价结果以直观的形式展示出来。这样可以帮助用户更好地理解评价结果，发现潜在问题和趋势，做出相应的调整和决策。</li>
+<li>数据管理与报告生成：系统软件提供数据管理功能，可以对注水井的历史数据进行存储和管理，便于用户查阅和比对不同时间段的数据。同时，系统软件还可以生成详细的评价报告，包括评价结果、关键指标分析、图表和曲线展示等，帮助用户进行全面的分析和决策。</li>
 </ol>
-<h3 id="二、关闭命令">二、关闭命令</h3>
-<p>1、查看进程</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># ps -ef|grep python</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>或者</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># ps -ef|grep Job</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>2、关闭进程</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># kill -9 19913</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>3、检查</p>
-<p>用1中查看进程的命令，检查或确认进程是否真正被关闭。</p>
+<p><strong>该系统软件的特点如下：</strong></p>
+<ol>
+<li>综合评价能力：系统软件综合考虑了注水井的多个因素和指标，包括注水效率、注水范围、注入液体的分布等，从多个维度评价注水井的开发效果。这样可以全面了解注水井的运行情况，及时发现问题并采取相应措施。</li>
+<li>实时性和准确性：系统软件可以实时采集和处理注水井的数据，并进行实时计算和分析，提供及时准确的评价结果。这样可以及时发现问题和异常，避免潜在的风险和损失。</li>
+<li>用户友好性：系统软件提供简洁直观的用户界面，操作简便，易于使用。同时，通过可视化展示和报告生成，使得评价结果易于理解和传达，方便用户做出决策。</li>
+<li>可定制性和扩展性：系统软件可以根据不同油田的实际情况和需求进行定制和调整。同时，具备良好的扩展性，可以集成更多的评价模型和算法，以适应不断变化的需求和技术发展。</li>
+<li>注水井开发效果综合评价系统软件通过数据采集、模型计算、数据分析和可视化展示等技术，帮助油田管理者和工程师全面评估注水井的效果，并做出科学决策，提高油田开发的效率和效果。</li>
+</ol>
+<h2 id="记录">记录</h2>
+<h3 id="Nacos-单机运行">Nacos 单机运行</h3>
+<pre class="line-numbers language-Bash" data-language="Bash"><code class="language-Bash">docker run -d \
+--name nacos-standalone \
+-e PREFER_HOST_MODE&#x3D;hostname \
+-e MODE&#x3D;standalone \
+-e JVM_XMS&#x3D;256m \
+-e JVM_XMX&#x3D;256m \
+-v &#x2F;root&#x2F;nacos-server&#x2F;logs&#x2F;:&#x2F;home&#x2F;nacos&#x2F;logs \
+-p 8848:8848 \
+nacos&#x2F;nacos-server:1.4.2<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="Docker部署的Spring-Cloud微服务注册到Nacos的IP为私网无法访问">Docker部署的Spring Cloud微服务注册到Nacos的IP为私网无法访问</h3>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://lucent.blog/?p=90">在Nacos中让服务使用指定网段ip注册 - Lucent’s Blog</a><br>
+<a target="_blank" rel="noopener" href="https://www.cnblogs.com/haoxianrui/p/14091590.html">Docker部署的Spring Cloud微服务注册到Nacos的IP为私网无法访问 - 有来技术 - 博客园</a></p>
+</blockquote>
+<h4 id="指定IP">指定IP</h4>
+<pre class="line-numbers language-none"><code class="language-none">spring:
+  cloud:
+    nacos:
+      discovery:
+        ip: 192.144.220.153<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="设置主机模式">设置主机模式</h4>
+<p><code>docker run -d --network=host --restart=always</code></p>
+<h4 id="指定网段IP注册">指定网段IP注册</h4>
+<pre class="line-numbers language-none"><code class="language-none">cloud:
+  inetutils:
+    ignored-interfaces: eth.*
+    preferred-networks:
+      - 192.168
+      - 192<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<blockquote>
+<p>查看docker桥接模式网络配置后，发现这种方式应该是没用的</p>
+</blockquote>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">eth0      Link encap:Ethernet  HWaddr 02:42:AC:11:00:03  
+          inet addr:172.17.0.3  Bcast:172.17.255.255  Mask:255.255.0.0
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:1038533 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:1226213 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:379406899 <span class="token punctuation">(</span><span class="token number">361.8</span> MiB<span class="token punctuation">)</span>  TX bytes:397027737 <span class="token punctuation">(</span><span class="token number">378.6</span> MiB<span class="token punctuation">)</span>
+
+lo        Link encap:Local Loopback  
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          UP LOOPBACK RUNNING  MTU:65536  Metric:1
+          RX packets:4 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:4 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:288 <span class="token punctuation">(</span><span class="token number">288.0</span> B<span class="token punctuation">)</span>  TX bytes:288 <span class="token punctuation">(</span><span class="token number">288.0</span> B<span class="token punctuation">)</span>
+
+
+Disconnected from container.
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="NACOS-鉴权">NACOS 鉴权</h2>
+<p>添加 <code>-e NACOS_AUTH_ENABLE=true</code><br>
+<a target="_blank" rel="noopener" href="https://nacos.io/zh-cn/docs/auth.html">Authorization</a></p>
+<h2 id="Dubbo">Dubbo</h2>
+<h3 id="注册到注册中心的地址是内网IP">注册到注册中心的地址是内网IP</h3>
+<blockquote>
+<p>可以通过dubbo.protocol或dubbo.provider的host属性对host进行配置,支持IP地址和域名.但此时注册到注册中心的IP地址和监听IP地址是同一个值<br>
+为了解决在虚拟环境或局域网内consumer无法与provider通信的问题,可以通过环境变量分别设置注册到注册中心的IP地址和监听IP地址,其优先级高于dubbo.protocol或dubbo.provider的host配置</p>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://cn.dubbo.apache.org/zh-cn/docs/advanced/set-host/">主机配置 | Apache Dubbo</a></p>
+<h3 id="通过docker运行">通过docker运行</h3>
+<pre class="line-numbers language-none"><code class="language-none">-e DUBBO_IP_TO_REGISTRY&#x3D;公网IP
+
+-p 9005:9005 -p 20880:20880<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-none"><code class="language-none">ENV TZ&#x3D;Asia&#x2F;Shanghai
+ENV DUBBO_IP_TO_REGISTRY&#x3D;公网IP<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h3 id="获取不到Bean">获取不到Bean</h3>
+<p>原本在单体项目中是这样<br>
+使用<code>SpringUtils.getBean</code></p>
+<blockquote>
+<p><code>SpringUtils.getBean</code>需要具体实现，可以在网上搜</p>
+</blockquote>
+<pre class="line-numbers language-Java" data-language="Java"><code class="language-Java">IWellService wellService &#x3D; SpringUtils.getBean(IWellService.class);<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>微服务进行了拆分所以会报错</p>
+<p>实现<code>DubboBean.getDubboBean</code>方法，解决</p>
+<pre class="line-numbers language-Java" data-language="Java"><code class="language-Java">IWellService wellService &#x3D; DubboBean.getDubboBean(IWellService.class);<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-Java" data-language="Java"><code class="language-Java">package club.cupk.waterflood.util;  
+  
+import org.apache.dubbo.config.spring.ReferenceBean;  
+import org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessor;  
+import xin.altitude.cms.common.util.SpringUtils;  
+  
+import java.util.Collection;  
+  
+public class DubboBean &#123;  
+public static &lt;T&gt; T getDubboBean(Class&lt;T&gt; requiredType)&#123;  
+ReferenceAnnotationBeanPostProcessor dubboContext &#x3D; SpringUtils.getBean(ReferenceAnnotationBeanPostProcessor.class);  
+Collection&lt;ReferenceBean&lt;?&gt;&gt; referenceBeans &#x3D; dubboContext.getReferenceBeans();  
+for (ReferenceBean&lt;?&gt; referenceBean : referenceBeans) &#123;  
+Class&lt;?&gt; objectType &#x3D; referenceBean.getObjectType();  
+if(objectType &#x3D;&#x3D; requiredType)&#123;  
+return (T)referenceBean.getObject();  
+&#125;  
+&#125;  
+return null;  
+&#125;  
+&#125;
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="Wrapper">Wrapper</h3>
+<div class="note danger"><h5 id="警告">警告:</h5>
+<p>不支持以及不赞成在 RPC 调用中把 Wrapper 进行传输</p>
+<ol>
+<li>wrapper 很重</li>
+<li>传输 wrapper 可以类比为你的 controller 用 map 接收值(开发一时爽,维护火葬场)</li>
+<li>正确的 RPC 调用姿势是写一个 DTO 进行传输,被调用方再根据 DTO 执行相应的操作</li>
+<li>我们拒绝接受任何关于 RPC 传输 Wrapper 报错相关的 issue 甚至 pr</li>
+</ol>
+</div>
+<h2 id="Spring-Cloud-Gateway负载均衡">Spring Cloud Gateway负载均衡</h2>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/9623f9fb160b">Spring Cloud Gateway负载均衡 - 简书</a><br>
+<a target="_blank" rel="noopener" href="https://blog.csdn.net/lingbomanbu_lyl/article/details/125325705">Spring Cloud Gateway整合Nacos实现服务路由及集群负载均衡_gateway nacos 负载均衡_凌波漫步&amp;的博客-CSDN博客</a></p>
+</blockquote>
+<h3 id="lb-lakerservice不生效"><code>lb://lakerservice</code>不生效</h3>
+<p>加入依赖</p>
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.springframework.cloud<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>spring-cloud-starter-loadbalancer<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="用RouteRecordGlobalFilter记录路由后的实际代理地址">用RouteRecordGlobalFilter记录路由后的实际代理地址</h3>
+<pre class="line-numbers language-Java" data-language="Java"><code class="language-Java">@Slf4j
+@Component
+public class RouteRecordGlobalFilter implements GlobalFilter, Ordered &#123;
+
+	@Override
+	public Mono&lt;Void&gt; filter(ServerWebExchange exchange, GatewayFilterChain chain) &#123;
+		&#x2F;&#x2F; RouteToRequestUrlFilter会把实际路由的URL通过该属性保存
+		URI proxyRequestUri &#x3D; exchange.getAttribute(ServerWebExchangeUtils.GATEWAY_REQUEST_URL_ATTR);
+		long start &#x3D; System.currentTimeMillis();
+
+		return chain.filter(exchange).then(Mono.fromRunnable(() -&gt; &#123;
+			long end &#x3D; System.currentTimeMillis();
+			log.info(&quot;实际调用地址为：&#123;&#125;，调用耗时为：&#123;&#125;ms&quot;, proxyRequestUri, (end - start));
+		&#125;));
+	&#125;
+
+	@Override
+	public int getOrder() &#123;
+		&#x2F;&#x2F; 优先级设为最低，先让RouteToRequestUrlFilter先调用
+		return Ordered.LOWEST_PRECEDENCE;
+	&#125;
+&#125;
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="YAML">YAML</h3>
+<h4 id="Local">Local</h4>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">gateway</span><span class="token punctuation">:</span>
+  <span class="token key atrule">discovery</span><span class="token punctuation">:</span>
+	<span class="token comment">#开启负载均衡</span>
+    <span class="token key atrule">locator</span><span class="token punctuation">:</span>
+      <span class="token key atrule">enabled</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+      <span class="token comment">#服务名小写</span>
+      <span class="token key atrule">lower-case-service-id</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+  <span class="token key atrule">loadbalancer</span><span class="token punctuation">:</span>
+    <span class="token key atrule">use404</span><span class="token punctuation">:</span> <span class="token boolean important">false</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="Nacos">Nacos</h4>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">spring</span><span class="token punctuation">:</span>
+  <span class="token key atrule">cloud</span><span class="token punctuation">:</span>
+    <span class="token key atrule">gateway</span><span class="token punctuation">:</span>
+      <span class="token comment"># 允许跨域请求配置</span>
+      <span class="token key atrule">globalcors</span><span class="token punctuation">:</span>
+        <span class="token key atrule">cors-configurations</span><span class="token punctuation">:</span>
+          <span class="token key atrule">'[/**]'</span><span class="token punctuation">:</span>
+            <span class="token comment"># 允许任何域名使用</span>
+            <span class="token key atrule">allowedOrigins</span><span class="token punctuation">:</span> <span class="token string">"*"</span>
+            <span class="token comment"># 允许任何头</span>
+            <span class="token key atrule">allowedHeaders</span><span class="token punctuation">:</span> <span class="token string">"*"</span>
+            <span class="token comment"># 允许任何方法(post、get等)</span>
+            <span class="token key atrule">allowedMethods</span><span class="token punctuation">:</span> <span class="token string">"*"</span>
+            <span class="token comment"># sessionid 多次访问一致</span>
+            <span class="token key atrule">allowCredentials</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+        <span class="token comment"># 允许来自所有域名(allowedOrigins)的所有请求方式(allowedMethods)发出CORS请求</span>
+        <span class="token key atrule">add-to-simple-url-handler-mapping</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>   <span class="token comment"># 允许来自所有域名(allowedOrigins)的所有请求方式(allowedMethods)发出CORS请求</span>
+      <span class="token key atrule">routes</span><span class="token punctuation">:</span>
+        <span class="token punctuation">-</span> <span class="token key atrule">id</span><span class="token punctuation">:</span> waterflood<span class="token punctuation">-</span>consumer
+          <span class="token key atrule">uri</span><span class="token punctuation">:</span> lb<span class="token punctuation">:</span>//waterflood<span class="token punctuation">-</span>consumer
+          <span class="token key atrule">predicates</span><span class="token punctuation">:</span>
+            <span class="token punctuation">-</span> Path=/api/<span class="token important">**</span>
+          <span class="token key atrule">filters</span><span class="token punctuation">:</span>
+            <span class="token punctuation">-</span> StripPrefix=1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
                 
             </div>
@@ -452,7 +630,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://blog.izyq.cn/16942/">http://blog.izyq.cn/16942/</a>
+                    <a href="http://blog.izyq.cn/20230720082452/">http://blog.izyq.cn/20230720082452/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -490,16 +668,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Linux/">
-                                    <span class="chip bg-color">Linux</span>
-                                </a>
-                            
-                                <a href="/tags/Python/">
-                                    <span class="chip bg-color">Python</span>
-                                </a>
-                            
-                                <a href="/tags/%E7%BE%A4%E6%99%96/">
-                                    <span class="chip bg-color">群晖</span>
+                                <a href="/tags/Java/">
+                                    <span class="chip bg-color">Java</span>
                                 </a>
                             
                         </div>
@@ -932,16 +1102,17 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/35976/">
+                <a href="/20230720082452/">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/izyq/izyq.github.io@master/medias/hexo.png" class="responsive-img" alt="Matery的修改与美化">
+                        <img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master//7-1_%E7%AE%A1%E7%90%86%E4%BA%BA%E5%91%98%E8%B4%A6%E5%8F%B7%E5%AF%86%E7%A0%81%E7%99%BB%E5%BD%95.png" class="responsive-img" alt="注水井综合评价系统">
                         
-                        <span class="card-title">Matery的修改与美化</span>
+                        <span class="card-title">注水井综合评价系统</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -951,30 +1122,31 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-01-23
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-07-20
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%8A%98%E8%85%BE/" class="post-category">
-                                    折腾
+                            <a href="/categories/Java/" class="post-category">
+                                    Java
+                                </a>
+                            
+                            <a href="/categories/Project/" class="post-category">
+                                    Project
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Hexo/">
-                        <span class="chip bg-color">Hexo</span>
-                    </a>
-                    
-                    <a href="/tags/Matery/">
-                        <span class="chip bg-color">Matery</span>
+                    <a href="/tags/Java/">
+                        <span class="chip bg-color">Java</span>
                     </a>
                     
                 </div>
@@ -988,12 +1160,12 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/6118/">
+                <a href="/20230720093159/">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/izyq/izyq.github.io@master/medias/Linux.png" class="responsive-img" alt="Linux系统inodes资源耗尽问题 ">
+                        <img src="https://cdn.jsdelivr.net/gh/izyq/Pic@master//202307202145611.png" class="responsive-img" alt="Git 脱敏">
                         
-                        <span class="card-title">Linux系统inodes资源耗尽问题 </span>
+                        <span class="card-title">Git 脱敏</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1004,27 +1176,23 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-09-19
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-07-20
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%8A%98%E8%85%BE/" class="post-category">
-                                    折腾
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                    学习
+                                </a>
+                            
+                            <a href="/categories/git/" class="post-category">
+                                    git
                                 </a>
                             
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/Linux/">
-                        <span class="chip bg-color">Linux</span>
-                    </a>
-                    
                 </div>
                 
             </div>
