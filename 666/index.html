@@ -367,14 +367,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    184
+                    469
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
 
@@ -415,6 +415,103 @@ cnpm <span class="token function">install</span> hexo-deployer-git <span class="
 </blockquote>
 <p><a target="_blank" rel="noopener" href="https://blog.17lai.site/posts/40300608/#">[三万字教程]基于Hexo的matery主题搭建博客并深度优化一站式完全教程 | 夜法之书</a><br>
 <a target="_blank" rel="noopener" href="https://blog.17lai.site/posts/cf0f47fd/">Hexo Markdown以及各种插件功能测试 | 夜法之书</a></p>
+<h2 id="常见样式">常见样式</h2>
+<pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown"><span class="token title important"><span class="token punctuation">###</span> Horizontal Rules</span>
+
+___
+
+<span class="token hr punctuation">---</span>
+
+<span class="token hr punctuation">***</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="Horizontal-Rules">Horizontal Rules</h3>
+<hr>
+<hr>
+<hr>
+<h3 id="tag-note">tag note</h3>
+<pre class="line-numbers language-none"><code class="language-none">&#123;% note [class] [no-icon] [summary] %&#125;
+Any content (support inline tags too).
+&#123;% endnote %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li><code>[class]</code> : <em>Optional parameter.</em> Supported values: default | primary | success | info | warning | danger.</li>
+<li><code>[no-icon]</code> : <em>Optional parameter.</em> Disable icon in note.</li>
+<li><code>[summary]</code> : <em>Optional parameter.</em> Optional summary of the note.</li>
+</ul>
+<h4 id="Examples">Examples</h4>
+<pre class="line-numbers language-none"><code class="language-none">&#123;% note %&#125;
+#### Header
+(without define class style)
+&#123;% endnote %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<div class="note "><h4 id="Header">Header</h4>
+<p>(without define class style)</p>
+</div>
+<hr>
+<pre class="line-numbers language-none"><code class="language-none">&#123;% note default %&#125;
+#### Default Header
+Welcome to [Hexo!](https:&#x2F;&#x2F;hexo.io)
+&#123;% endnote %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<div class="note default"><h4 id="Default-Header">Default Header</h4>
+<p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io">Hexo!</a></p>
+</div>
+<hr>
+<pre class="line-numbers language-none"><code class="language-none">&#123;% note primary %&#125;
+#### Primary Header
+**Welcome** to [Hexo!](https:&#x2F;&#x2F;hexo.io)
+&#123;% endnote %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<div class="note primary"><h4 id="Primary-Header">Primary Header</h4>
+<p><strong>Welcome</strong> to <a target="_blank" rel="noopener" href="https://hexo.io">Hexo!</a></p>
+</div>
+<hr>
+<pre class="line-numbers language-none"><code class="language-none">&#123;% note info %&#125;
+#### Info Header
+**Welcome** to [Hexo!](https:&#x2F;&#x2F;hexo.io)
+&#123;% endnote %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<div class="note info"><h4 id="Info-Header">Info Header</h4>
+<p><strong>Welcome</strong> to <a target="_blank" rel="noopener" href="https://hexo.io">Hexo!</a></p>
+</div>
+<hr>
+<pre class="line-numbers language-none"><code class="language-none">&#123;% note success %&#125;
+#### Success Header
+**Welcome** to [Hexo!](https:&#x2F;&#x2F;hexo.io)
+&#123;% endnote %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<div class="note success"><h4 id="Success-Header">Success Header</h4>
+<p><strong>Welcome</strong> to <a target="_blank" rel="noopener" href="https://hexo.io">Hexo!</a></p>
+</div>
+<hr>
+<pre class="line-numbers language-none"><code class="language-none">&#123;% note warning %&#125;
+#### Warning Header
+**Welcome** to [Hexo!](https:&#x2F;&#x2F;hexo.io)
+&#123;% endnote %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<div class="note warning"><h4 id="Warning-Header">Warning Header</h4>
+<p><strong>Welcome</strong> to <a target="_blank" rel="noopener" href="https://hexo.io">Hexo!</a></p>
+</div>
+<hr>
+<pre class="line-numbers language-none"><code class="language-none">&#123;% note danger %&#125;
+#### Danger Header
+**Welcome** to [Hexo!](https:&#x2F;&#x2F;hexo.io)
+&#123;% endnote %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<div class="note danger"><h4 id="Danger-Header">Danger Header</h4>
+<p><strong>Welcome</strong> to <a target="_blank" rel="noopener" href="https://hexo.io">Hexo!</a></p>
+</div>
+<hr>
+<pre class="line-numbers language-none"><code class="language-none">&#123;% note info no-icon %&#125;
+#### No icon note
+Note **without** icon: &#96;note info no-icon&#96;
+&#123;% endnote %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<div class="note info no-icon"><h4 id="No-icon-note">No icon note</h4>
+<p>Note <strong>without</strong> icon: <code>note info no-icon</code></p>
+</div>
+<hr>
+<pre class="line-numbers language-none"><code class="language-none">&#123;% note info no-icon This is a summary %&#125; 
+#### Details and summary (No icon) 
+Note with summary: &#96;note info no-icon This is a summary&#96; 
+&#123;% endnote %&#125;  
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<details class="note info no-icon"><summary><p>This is a summary</p>
+</summary>
+  <h4 id="Details-and-summary-No-icon">Details and summary (No icon)</h4>
+<p>Note with summary: <code>note info no-icon This is a summary</code></p>
+
+  </details>  
 
                 
             </div>
@@ -441,7 +538,7 @@ cnpm <span class="token function">install</span> hexo-deployer-git <span class="
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://blog.izyq.cn/35976/">http://blog.izyq.cn/35976/</a>
+                    <a href="http://blog.izyq.cn/666/">http://blog.izyq.cn/666/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -884,7 +981,7 @@ cnpm <span class="token function">install</span> hexo-deployer-git <span class="
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">40k</span>&nbsp;字
+                class="white-color">40.4k</span>&nbsp;字
             
             
             
